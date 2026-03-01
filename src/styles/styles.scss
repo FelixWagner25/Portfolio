@@ -1,1 +1,11 @@
 @use './mixins.scss' as mixins;
+
+@font-face {
+    font-family: "Syne";
+    src: url("../assets/fonts/Syne/Syne-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Overpass";
+    src: url("../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf");
+}
