@@ -2,6 +2,7 @@
 
 section{
     @include mixin.d-flex($justify-content: space-between);
+    height: 92px;
 }
 
 a{
