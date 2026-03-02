@@ -9,3 +9,11 @@
     font-family: "Overpass";
     src: url("../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf");
 }
+
+.center-content{
+    @include mixins.d-flex($flex-direction: column)
+}
+
+.max-width-1440px{
+    max-width: 1440px;
+}
