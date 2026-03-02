@@ -1,7 +1,7 @@
 @use '../../../styles/mixins.scss' as mixin;
 
 section{
-    @include mixin.d-flex($justify-content: space-between)
+    @include mixin.d-flex($justify-content: space-between);
 }
 
 a{
@@ -31,5 +31,7 @@ button{
     button{
         width: 40px;
         height: 28px;
+        @include mixin.font($style: bold);
+        @include mixin.d-flex();
     }
 }
