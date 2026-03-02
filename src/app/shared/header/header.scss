@@ -1,0 +1,35 @@
+@use '../../../styles/mixins.scss' as mixin;
+
+section{
+    @include mixin.d-flex($justify-content: space-between)
+}
+
+a{
+    > img{
+        width: 67px;
+        height: 30px;
+    }
+}
+
+button{
+    > img{
+        width: 40px;
+        height: 32px;
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.menu-lang-wrap{
+    @include mixin.d-flex($gap: 40px)
+}
+
+.lang-wrap{
+    @include mixin.d-flex();
+    button{
+        width: 40px;
+        height: 28px;
+    }
+}
