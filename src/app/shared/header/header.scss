@@ -1,4 +1,6 @@
 @use '../../../styles/mixins.scss' as mixin;
+@import '../../../styles/styles.scss';
+
 
 section{
     @include mixin.d-flex($justify-content: space-between);
@@ -13,7 +15,7 @@ a{
 }
 
 button{
-    background-color: white;
+    background-color: #FFFCF3;
     border: none;
     > img{
         width: 40px;
@@ -23,6 +25,10 @@ button{
             cursor: pointer;
         }
     }
+}
+
+.outlined{
+    border: 2px solid $contrast-color;
 }
 
 .menu-lang-wrap{
