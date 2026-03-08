@@ -13,7 +13,7 @@ export class LanguageService {
     let storedLanguage = localStorage.getItem(this.STORAGE_KEY);
     if ( storedLanguage === "de" || storedLanguage === "en"){return storedLanguage}
     else { 
-      return "en" as AppLanguage
+      return "en"
     }
   }
 

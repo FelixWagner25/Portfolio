@@ -1,5 +1,5 @@
 @use '../../../styles/mixins.scss' as mixin;
-@import '../../../styles/styles.scss';
+@use '../../../styles/styles.scss' as styles;
 
 
 section{
@@ -28,7 +28,7 @@ button{
 }
 
 .outlined{
-    border: 2px solid $contrast-color;
+    border: 2px solid styles.$contrast-color;
 }
 
 .menu-lang-wrap{

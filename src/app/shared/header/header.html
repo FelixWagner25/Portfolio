@@ -4,8 +4,12 @@
   </a>
   <div class="menu-lang-wrap">
     <div class="lang-wrap">
-      <button class="outlined">EN</button>
-      <button>DE</button>
+      <button (click)="setLanguage('en')" [class.outlined]="(language$ | async) === 'en'">
+        EN
+      </button>
+      <button (click)="setLanguage('de')" [class.outlined]="(language$ | async) === 'de'">
+        DE
+      </button>
     </div>
     <button>
       <img src="assets/icons/menu.svg" alt="Menu" />
