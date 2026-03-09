@@ -6,7 +6,7 @@
     gap: $gap;
 }
 
-@mixin font($name: "Syne", $weight: 700, $style: normal, $size: 16px, $line-height: 120%, $letter-spacing: 0%){
+@mixin font($name: "Syne", $weight: 700, $size: 16px, $line-height: 120%, $letter-spacing: 0%, $style: normal,){
     font-family: $name;
     font-weight: $weight;
     font-style: $style;

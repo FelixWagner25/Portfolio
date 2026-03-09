@@ -1,0 +1,31 @@
+@use '../../../styles/mixins.scss' as mixin;
+@use '../../../styles/styles.scss' as styles;
+
+section{
+    @include mixin.d-flex($justify-content: space-between, $align-items: flex-end);
+    background-color: black;
+    color: #FFFCF3;
+    padding: 100px 100px;
+}
+
+.logo{
+    width: 67px;
+    height: 30px;
+}
+
+.footer-text{
+    @include mixin.font("Overpass", 400, 22px)
+}
+
+.icon-imprint-wrap{
+    @include mixin.d-flex($flex-direction: column, $justify-content: flex-end, $align-items: flex-end)
+}
+
+.icon-wrap{
+    @include mixin.d-flex($gap: 10px)
+}
+
+.imprint{
+    @include mixin.font("Overpass", 400, 16px);
+    padding: 5px 10px;
+}

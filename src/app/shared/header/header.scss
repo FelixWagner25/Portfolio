@@ -28,7 +28,7 @@ button{
 }
 
 .outlined{
-    border: 2px solid styles.$contrast-color;
+    border: 2px solid styles.$highlight-color;
 }
 
 .menu-lang-wrap{
@@ -40,7 +40,7 @@ button{
     button{
         width: 40px;
         height: 28px;
-        @include mixin.font($style: bold);
+        @include mixin.font();
         @include mixin.d-flex();
     }
 }
