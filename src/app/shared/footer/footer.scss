@@ -2,10 +2,14 @@
 @use '../../../styles/styles.scss' as styles;
 
 section{
-    @include mixin.d-flex($justify-content: space-between, $align-items: flex-end);
+    @include mixin.d-flex($justify-content: space-between);
     background-color: black;
     color: #FFFCF3;
-    padding: 100px 100px;
+    padding: 100px 100px 10px 100px;
+}
+
+a{
+    color: #FFFCF3;
 }
 
 .logo{
@@ -22,7 +26,14 @@ section{
 }
 
 .icon-wrap{
-    @include mixin.d-flex($gap: 10px)
+    @include mixin.d-flex($gap: 10px);
+
+    a{
+    > img {
+        width: 40px;
+        height: 40px;
+    }
+}
 }
 
 .imprint{
