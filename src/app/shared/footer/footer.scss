@@ -2,9 +2,12 @@
 @use '../../../styles/styles.scss' as styles;
 
 section{
-    @include mixin.d-flex($justify-content: space-between);
     background-color: black;
     color: #FFFCF3;
+}
+
+.footer-wrap{
+    @include mixin.d-flex($justify-content: space-between);
     padding: 100px 100px 10px 100px;
 }
 
