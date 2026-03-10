@@ -1,0 +1,27 @@
+@use '../../styles/mixins.scss' as mixin;
+@use '../../styles/styles.scss' as styles;
+
+section{
+    height: calc(100vh - 92px);
+}
+
+.title-wrap{
+    @include mixin.d-flex($flex-direction: column, $gap: 0px);
+    > b{
+        @include mixin.font("Syne", 800, 92px, 100%, -2.5%)
+    }
+    > div{
+            @include mixin.d-flex();
+            width: 100%;
+        > span{
+            @include mixin.font("Overpass", 700, 32px, 100%, -2.5%);
+            color: styles.$highlight-color;
+        }
+    }
+}
+
+.hl{
+    height: 2px;
+    width: 100%;
+    border-top: 1px solid black;
+}
