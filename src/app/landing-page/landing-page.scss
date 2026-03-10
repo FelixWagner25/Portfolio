@@ -6,13 +6,14 @@ section{
 }
 
 .title-wrap{
-    @include mixin.d-flex($flex-direction: column, $gap: 0px);
+    padding: 120px 100px 0px 100px;
+    @include mixin.d-flex($flex-direction: column, $gap: 16px);
     > b{
         @include mixin.font("Syne", 800, 92px, 100%, -2.5%)
     }
     > div{
-            @include mixin.d-flex();
-            width: 100%;
+        @include mixin.d-flex();
+        width: 100%;
         > span{
             @include mixin.font("Overpass", 700, 32px, 100%, -2.5%);
             color: styles.$highlight-color;
@@ -21,7 +22,7 @@ section{
 }
 
 .hl{
-    height: 2px;
-    width: 100%;
+    height: 3px;
+    width: min(100%, 400px);
     border-top: 1px solid black;
 }
