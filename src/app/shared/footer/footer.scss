@@ -45,6 +45,9 @@ a{
 .imprint{
     @include mixin.font("Overpass", 400, 16px);
     padding: 5px 10px;
+    &:hover{
+        font-weight: bold;
+    }
 }
 
 
