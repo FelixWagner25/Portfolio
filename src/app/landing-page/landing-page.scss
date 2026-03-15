@@ -12,17 +12,18 @@ section{
         @include mixin.font("Syne", 800, 92px, 100%, -2.5%)
     }
     > div{
-        @include mixin.d-flex();
+        @include mixin.d-flex($gap: 16px);
         width: 100%;
         > span{
             @include mixin.font("Overpass", 700, 32px, 100%, -2.5%);
             color: styles.$highlight-color;
+            white-space: nowrap;
         }
     }
 }
 
 .hl{
-    height: 3px;
-    width: min(100%, 400px);
-    border-top: 1px solid black;
+    width: min(100%, 520px);
+    border-top: 3px solid black;
+    border-radius: 8px;
 }
