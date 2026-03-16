@@ -3,10 +3,14 @@
 
 section{
     height: calc(100vh - 92px);
+    padding: 0px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .title-wrap{
-    padding: 120px 100px 0px 100px;
+    padding-top: 102px;
     @include mixin.d-flex($flex-direction: column, $gap: 16px);
     > b{
         @include mixin.font("Syne", 800, 92px, 100%, -2.5%)
@@ -26,4 +30,14 @@ section{
     width: min(100%, 520px);
     border-top: 3px solid black;
     border-radius: 8px;
+}
+
+.email-scroll-wrap{
+    @include mixin.d-flex($justify-content: space-between, $align-items: flex-end);
+    min-height: 240px
+}
+
+.email{
+    transform: rotate(270deg) translateY(100%);
+    transform-origin: left bottom;
 }
