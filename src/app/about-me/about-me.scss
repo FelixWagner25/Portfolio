@@ -9,3 +9,22 @@ section{
 .description{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 48px)
 }
+
+.icon-wrap{
+    @include mixin.d-flex($align-items: center);
+    > img{
+    height: 40px;
+    width: 40px;
+    }
+}
+
+.contact-wrap{
+    width: 100%;
+    @include mixin.d-flex();
+    > a{
+        color:black;
+        padding: 20px 60px;
+        border: 4px solid black;
+        @include mixin.font("Overpass", 400, 23px)
+    }
+}
