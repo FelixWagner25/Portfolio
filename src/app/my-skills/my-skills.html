@@ -1,1 +1,7 @@
-<p>my-skills works!</p>
+<h1 class="h1-main">My skills</h1>
+@if ((language$ | async) === 'en') {
+  <span>I expand my skills continuously.</span>
+}
+@if ((language$ | async) === 'de') {
+  <span>Ich erweitere beständig meine Fähigkeiten.</span>
+}

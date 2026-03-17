@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../shared/services/language.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-my-skills',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './my-skills.html',
   styleUrl: './my-skills.scss',
 })
 export class MySkills {
-
+  private languageService = inject(LanguageService);
+  language$ = this.languageService.language$;
 }
