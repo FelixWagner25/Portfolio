@@ -1,0 +1,11 @@
+@use "../main/main.scss" as main;
+@use "../../styles/mixins.scss" as mixin;
+
+
+section{
+    @include mixin.font("Overpass", 400, 22px);
+}
+
+.description{
+    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 48px)
+}
