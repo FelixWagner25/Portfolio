@@ -4,10 +4,20 @@
 
 section{
     @include mixin.font("Overpass", 400, 22px);
+    @include mixin.d-flex($justify-content: space-between, $gap: 48px);
+    > div{
+        > img{
+            padding-right: 20px;
+            width: 482px;
+            height: 533px;
+            object-fit: contain;
+        }
+    }
 }
 
 .description{
-    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 48px)
+    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 48px);
+    width: 50%;
 }
 
 .icon-wrap{
