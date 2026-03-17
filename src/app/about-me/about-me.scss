@@ -25,6 +25,12 @@ section{
         color:black;
         padding: 20px 60px;
         border: 4px solid black;
-        @include mixin.font("Overpass", 400, 23px)
+        @include mixin.font("Overpass", 400, 23px);
+        transition: padding 100ms ease-out, font-weight 100ms ease-out;
+        &:hover{
+            font-weight: 800;
+            padding: 20px 80px;
+        }
     }
+
 }
