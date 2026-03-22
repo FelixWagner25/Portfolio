@@ -1,14 +1,22 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
+@use "../../styles/styles.scss" as style;
 
 section{
     @include mixin.d-flex($flex-direction: column, $gap: 0px);
     > div{
         width: 100%;
         padding: 100px;
+        padding-top: 120px;
         border: 4px solid black;
         @include mixin.d-flex($flex-direction: column, $gap: 72px);
     }
+}
+
+h1{
+    transform: translateY(50%);
+    background-color: style.$background-color;
+    padding: 0 16px;
 }
 
 .skills-content{
