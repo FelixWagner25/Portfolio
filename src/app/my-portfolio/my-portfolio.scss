@@ -1,5 +1,33 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as style;
+@use "../../styles/styles.scss" as styles;
 
+section{
+    @include mixin.d-flex($flex-direction: column, $gap: 0px)
+}
 
+h1{
+    transform: translateY(50%);
+    background-color: styles.$background-color;
+    padding: 0 16px;
+}
+
+.portfolio-wrap{
+    padding: 100px 0px;
+    width: 100%;
+}
+
+.project-wrap{
+    > img{
+        width: 620px;
+        height: 393px;
+    }
+}
+
+.uneven{
+    @include mixin.d-flex($justify-content: flex-start, $align-items: flex-start)
+}
+
+.even{
+    @include mixin.d-flex($justify-content: flex-end, $align-items:flex-start)
+}
