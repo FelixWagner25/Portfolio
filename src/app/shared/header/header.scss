@@ -5,6 +5,10 @@
 section{
     @include mixin.d-flex($justify-content: space-between);
     height: 92px;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background-color: styles.$background-color;
 }
 
 a{
