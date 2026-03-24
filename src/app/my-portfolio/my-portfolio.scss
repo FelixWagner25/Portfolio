@@ -2,6 +2,8 @@
 @use "../../styles/mixins.scss" as mixin;
 @use "../../styles/styles.scss" as styles;
 
+$project-img-height: 393px;
+
 section{
     @include mixin.d-flex($flex-direction: column, $gap: 0px)
 }
@@ -15,13 +17,15 @@ h1{
 .portfolio-wrap{
     padding: 100px 0px;
     width: 100%;
-    @include mixin.d-flex($flex-direction: column, $gap: 40px);
+    @include mixin.d-flex($flex-direction: column, $gap: 80px);
 }
 
 .project-wrap{
-    > img{
-        width: 620px;
-        height: 393px;
+    > a{
+        > img{
+            width: 620px;
+            height: $project-img-height;
+        }
     }
 }
 
@@ -30,5 +34,10 @@ h1{
 }
 
 .even{
-    @include mixin.d-flex($justify-content: flex-end, $align-items:flex-start, $gap: 80px)
+    @include mixin.d-flex($justify-content: flex-end, $align-items: flex-start, $gap: 80px)
+}
+
+aside{
+    height: $project-img-height;
+    @include mixin.d-flex($flex-direction: column, $justify-content: space-between);
 }
