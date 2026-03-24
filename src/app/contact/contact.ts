@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { LanguageService } from '../shared/services/language.service';
+import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
 export class Contact {
-
+  private languageService = inject(LanguageService);
+  language$ = this.languageService.language$;
 }

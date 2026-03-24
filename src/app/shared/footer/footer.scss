@@ -8,7 +8,7 @@ section{
 
 .footer-wrap{
     @include mixin.d-flex($justify-content: space-between);
-    padding: 0px 16px 16px 16px;
+    padding-bottom: 16px;
 }
 
 a{

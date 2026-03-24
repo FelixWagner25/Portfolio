@@ -1,1 +1,25 @@
-<p>contact works!</p>
+<section>
+  @if ((language$ | async) === 'en') {
+    <h1>Contact</h1>
+    <div class="subtitle">Let us get in touch!</div>
+    <form>
+      <input type="text" name="contact-name" id="input-name" placeholder="Your name *" />
+      <input
+        type="email"
+        name="contact-email"
+        id="input-email"
+        placeholder="Your email address *"
+      />
+      <textarea name="contact-message" id="input-contact" placeholder="Your message *"></textarea>
+      <input type="checkbox" name="contact-checkbox" id="input-checkbox" />
+      <span
+        >I read the <span>privacy policy</span> and agree to the processing of my data as outlined.
+      </span>
+      <input type="submit" value="Send message" />
+    </form>
+  }
+  @if ((language$ | async) === 'de') {
+    <h1>Kontakt</h1>
+    <div class="subtitle">Lassen Sie uns ins Gespräch kommen!</div>
+  }
+</section>
