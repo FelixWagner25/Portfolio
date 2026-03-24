@@ -3,6 +3,7 @@ import { LanguageService } from '../shared/services/language.service';
 import { Component, inject } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-contact',
   imports: [AsyncPipe],
   templateUrl: './contact.html',

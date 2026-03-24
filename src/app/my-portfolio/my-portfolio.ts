@@ -3,6 +3,7 @@ import { LanguageService } from '../shared/services/language.service';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-my-portfolio',
   imports: [AsyncPipe],
   templateUrl: './my-portfolio.html',
