@@ -84,3 +84,17 @@ a{
   text-decoration: none;
   cursor: pointer;
 }
+
+app-contact {
+  @include mat.form-field-overrides((
+    outlined-outline-width: 2px,
+    outlined-focus-outline-width: 2px,
+    outlined-focus-label-text-color: $highlight-color,
+    outlined-focus-outline-color: $highlight-color,
+    outlined-label-text-color: $highlight-color,
+    outlined-input-text-placeholder-color: $highlight-color,
+    outlined-input-text-color: $background-color,
+    outlined-hover-outline-color: $background-color,
+    outlined-hover-label-text-color: $highlight-color,
+  ));
+}
