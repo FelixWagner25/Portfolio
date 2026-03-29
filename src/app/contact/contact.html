@@ -4,14 +4,18 @@
     <div>
       <div class="subtitle">Let us get in touch!</div>
       <form class="contact-form">
-        <input type="text" name="contact-name" id="input-name" placeholder="Your name *" />
-        <input
-          type="email"
-          name="contact-email"
-          id="input-email"
-          placeholder="Your email address *"
-        />
-        <textarea name="contact-message" id="input-contact" placeholder="Your message *"></textarea>
+        <mat-form-field appearance="outline" class="custom-text-input">
+          <mat-label>Your name *</mat-label>
+          <input type="text" id="contact-name" matInput />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Your email *</mat-label>
+          <input id="contact-email" type="email" matInput />
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="custom-textarea">
+          <mat-label>Your message *</mat-label>
+          <textarea id="contact-message" matInput></textarea>
+        </mat-form-field>
         <div class="checkbox-wrap">
           <input type="checkbox" name="contact-checkbox" id="input-checkbox" />
           <span

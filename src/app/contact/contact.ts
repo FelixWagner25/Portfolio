@@ -1,11 +1,14 @@
 import { AsyncPipe } from '@angular/common';
 import { LanguageService } from '../shared/services/language.service';
 import { Component, inject } from '@angular/core';
+import { MatFormField, MatLabel } from '@angular/material/select';
+import { MatInput } from '@angular/material/input';
+
 
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, MatInput, MatFormField, MatLabel],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })

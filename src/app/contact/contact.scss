@@ -30,3 +30,8 @@ h1{
 .checkbox-wrap{
     @include mixin.d-flex();
 }
+
+mat-form-field{
+    width: 613px;
+    padding: 15px 25px;
+}
