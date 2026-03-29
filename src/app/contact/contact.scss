@@ -1,0 +1,32 @@
+@use "../main/main.scss" as main;
+@use "../../styles/mixins.scss" as mixin;
+@use "../../styles/styles.scss" as styles;
+
+section{
+    > div{
+        padding-top: 56px;
+        @include mixin.d-flex($flex-direction: column);
+    }
+}
+
+.subtitle{
+    color: styles.$highlight-color;
+    @include mixin.font("Overpass", 700, 32px);
+}
+
+.contact-form{
+    @include mixin.d-flex($flex-direction: column, $gap: 20px);
+}
+
+h1{
+    color: white;
+    @include mixin.font("Syne", 800, 78px, $line-height:100%);
+    letter-spacing: 1%;
+    &:hover{
+        color: styles.$highlight-color;
+    }
+}
+
+.checkbox-wrap{
+    @include mixin.d-flex();
+}
