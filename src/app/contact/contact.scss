@@ -29,8 +29,21 @@ h1{
 
 .checkbox-wrap{
     @include mixin.d-flex();
+    color: styles.$background-color;
+    > span{
+        @include mixin.font("Overpass", 400, 14px);
+        > a{
+            color: styles.$highlight-color;
+        }
+    }
 }
 
 mat-form-field{
     width: 613px;
+}
+
+.btn-contact{
+    color: styles.$background-color;
+    border: 4px solid styles.$background-color;
+    background-color: black;
 }
