@@ -5,7 +5,7 @@ import { MatFormField, MatLabel } from '@angular/material/select';
 import { MatInput, MatError } from '@angular/material/input';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { merge, map } from 'rxjs';
 
 
@@ -21,7 +21,8 @@ export class Contact {
   private languageService = inject(LanguageService);
   language$ = this.languageService.language$;
 
-  readonly texts$ = this.language$.pipe(map((language) => language === 'de' ? germanTexts: englishTexts))
+  readonly texts$ = this.language$.pipe(map((language) => language === 'de' ? germanTexts: englishTexts));
+  readonly texts = toSignal(this.texts$, {initialValue: englishTexts});
 
   readonly name = new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(512)]);
   readonly email = new FormControl('', [Validators.required, Validators.email]);
@@ -53,11 +54,11 @@ export class Contact {
 
   processNameErrorMessageUpdate(){
     if(this.name.hasError('required')){
-      this.nameErrorMessage.set('Your name is required');
+      this.nameErrorMessage.set(this.texts().nameRequiredError);
     } else if (this.name.hasError('minlength')){
-      this.nameErrorMessage.set('Not enough characters');
+      this.nameErrorMessage.set(this.texts().tooLessCharacterError);
     } else if (this.name.hasError('maxlength')){
-      this.nameErrorMessage.set('Too many characters');
+      this.nameErrorMessage.set(this.texts().tooManyCharactersError);
     } else {
       this.nameErrorMessage.set('');
     }
@@ -65,9 +66,9 @@ export class Contact {
 
   processEmailErrorMessageUpdate(){
     if (this.email.hasError('required')){
-      this.emailErrorMessage.set('Your email address is required');
+      this.emailErrorMessage.set(this.texts().emailRequiredError);
     } else if (this.email.hasError('email')){
-      this.emailErrorMessage.set('Not a valid email address');
+      this.emailErrorMessage.set(this.texts().emailPatternError);
     } else{
       this.emailErrorMessage.set('');
     }  
@@ -75,11 +76,11 @@ export class Contact {
 
   processMessageErrorMessageUpdate(){
     if (this.message.hasError('required')){
-      this.messageErrorMessage.set('A message is required');
+      this.messageErrorMessage.set(this.texts().messageRequiredError);
     } else if (this.message.hasError('minlength')){
-      this.messageErrorMessage.set('Not enough characters');
+      this.messageErrorMessage.set(this.texts().tooLessCharacterError);
     } else if (this.message.hasError('maxlength')){
-      this.messageErrorMessage.set('Too many characters');
+      this.messageErrorMessage.set(this.texts().tooManyCharactersError);
     } else{
       this.messageErrorMessage.set('');
     }   
@@ -120,8 +121,8 @@ export const germanTexts: ContactTexts = {
   emailPatternError: "Keine valide E-Mail-Adresse",
   privacyPrefix: "Ich habe die ",
   privacyLink: "Datenschutzerklärung",
-  privacySuffix: " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-  submit: "Nachricht abschicken",
+  privacySuffix: " gelesen und stimme der Verarbeitung meiner Daten zu.",
+  submit: "Nachricht senden",
 };
 
 export const englishTexts: ContactTexts = {

@@ -1,11 +1,11 @@
 <section>
-  @if ((language$ | async) === 'en') {
-    <h1>Contact</h1>
+  @if (texts$ | async; as texts) {
+    <h1>{{ texts.title }}</h1>
     <div>
-      <div class="subtitle">Let us get in touch!</div>
+      <div class="subtitle">{{ texts.subtitle }}</div>
       <form class="contact-form">
         <mat-form-field appearance="outline" class="custom-text-input">
-          <mat-label>Your name</mat-label>
+          <mat-label>{{ texts.nameLabel }}</mat-label>
           <input
             matInput
             type="text"
@@ -18,11 +18,11 @@
           }
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Your email</mat-label>
+          <mat-label>{{ texts.emailLabel }}</mat-label>
           <input
             matInput
             type="email"
-            placeholder="yourcontact@domain.com"
+            placeholder="{{ texts.emailPlaceholder }}"
             [formControl]="email"
             (blur)="updateErrorMessage('email')"
             required
@@ -32,7 +32,7 @@
           }
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Your message</mat-label>
+          <mat-label>{{ texts.messageLabel }}</mat-label>
           <textarea
             matInput
             rows="8"
@@ -48,16 +48,11 @@
         <div class="checkbox-wrap">
           <mat-checkbox type="checkbox" name="contact-checkbox" id="input-checkbox" />
           <span
-            >I read the <a>privacy policy</a> and agree to the processing of my data as outlined.
+            >{{ texts.privacyPrefix }}<a>{{ texts.privacyLink }}</a> {{ texts.privacySuffix }}
           </span>
         </div>
-
-        <input class="btn-main btn-contact" type="submit" value="Send message" />
+        <input class="btn-main btn-contact" type="submit" value="{{ texts.submit }}" />
       </form>
     </div>
-  }
-  @if ((language$ | async) === 'de') {
-    <h1>Kontakt</h1>
-    <div class="subtitle">Lassen Sie uns ins Gespräch kommen!</div>
   }
 </section>
