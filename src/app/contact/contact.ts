@@ -21,7 +21,7 @@ export class Contact {
   private languageService = inject(LanguageService);
   language$ = this.languageService.language$;
 
-  readonly name = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  readonly name = new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(512)]);
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly message = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(4096)]);
 
@@ -40,6 +40,8 @@ export class Contact {
           this.errorMessage.set('Your name is required');
         } else if (this.name.hasError('minlength')){
           this.errorMessage.set('Not enough characters');
+        } else if (this.name.hasError('maxlength')){
+          this.errorMessage.set('Too many characters');
         } else {
           this.errorMessage.set('');
         }
