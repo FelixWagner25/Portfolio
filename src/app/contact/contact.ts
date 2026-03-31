@@ -21,21 +21,37 @@ export class Contact {
   private languageService = inject(LanguageService);
   language$ = this.languageService.language$;
 
+  readonly name = new FormControl('', [Validators.required, Validators.minLength(3)]);
   readonly email = new FormControl('', [Validators.required, Validators.email]);
 
   errorMessage = signal('');
 
   constructor(){
-    merge(this.email.statusChanges, this.email.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage());
+    merge(this.name.statusChanges, this.name.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('name'));
+    merge(this.email.statusChanges, this.email.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage('email'));
   }
 
-  updateErrorMessage(){
-    if (this.email.hasError('required')){
-      this.errorMessage.set('Your email address is required');
-    } else if (this.email.hasError('email')){
-      this.errorMessage.set('Not a valid email address');
-    } else{
-      this.errorMessage.set('');
+  updateErrorMessage(inputType:string){
+    switch (inputType) {
+      case "name":
+        if(this.name.hasError('required')){
+          this.errorMessage.set('Your name is required');
+        } else if (this.name.hasError('minlength')){
+          this.errorMessage.set('Not enough characters');
+        } else {
+          this.errorMessage.set('');
+        }
+        break;
+      case "email":
+        if (this.email.hasError('required')){
+          this.errorMessage.set('Your email address is required');
+        } else if (this.email.hasError('email')){
+          this.errorMessage.set('Not a valid email address');
+        } else{
+          this.errorMessage.set('');
+        }   
+        break;
+
     }
   }
 }

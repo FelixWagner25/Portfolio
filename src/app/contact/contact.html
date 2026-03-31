@@ -5,18 +5,26 @@
       <div class="subtitle">Let us get in touch!</div>
       <form class="contact-form">
         <mat-form-field appearance="outline" class="custom-text-input">
-          <mat-label>Your name *</mat-label>
-          <input type="text" id="contact-name" matInput />
+          <mat-label>Your name</mat-label>
+          <input
+            matInput
+            type="text"
+            [formControl]="name"
+            (blur)="updateErrorMessage('name')"
+            required
+          />
+          @if (name.invalid) {
+            <mat-error>{{ errorMessage() }}</mat-error>
+          }
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Your email</mat-label>
           <input
             matInput
-            name="contact-email"
             type="email"
             placeholder="yourcontact@domain.com"
             [formControl]="email"
-            (blur)="updateErrorMessage()"
+            (blur)="updateErrorMessage('email')"
             required
           />
           @if (email.invalid) {
