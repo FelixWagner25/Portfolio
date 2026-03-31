@@ -31,9 +31,19 @@
             <mat-error>{{ errorMessage() }}</mat-error>
           }
         </mat-form-field>
-        <mat-form-field appearance="outline" class="custom-textarea">
-          <mat-label>Your message *</mat-label>
-          <textarea id="contact-message" matInput rows="8"></textarea>
+        <mat-form-field appearance="outline">
+          <mat-label>Your message</mat-label>
+          <textarea
+            matInput
+            rows="8"
+            [formControl]="message"
+            (blur)="updateErrorMessage('message')"
+            required
+          >
+          </textarea>
+          @if (message.invalid) {
+            <mat-error>{{ errorMessage() }}</mat-error>
+          }
         </mat-form-field>
         <div class="checkbox-wrap">
           <mat-checkbox type="checkbox" name="contact-checkbox" id="input-checkbox" />

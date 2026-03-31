@@ -23,12 +23,14 @@ export class Contact {
 
   readonly name = new FormControl('', [Validators.required, Validators.minLength(3)]);
   readonly email = new FormControl('', [Validators.required, Validators.email]);
+  readonly message = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(4096)]);
 
   errorMessage = signal('');
 
   constructor(){
     merge(this.name.statusChanges, this.name.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('name'));
     merge(this.email.statusChanges, this.email.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage('email'));
+    merge(this.message.statusChanges, this.message.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage('message'));
   }
 
   updateErrorMessage(inputType:string){
@@ -51,7 +53,17 @@ export class Contact {
           this.errorMessage.set('');
         }   
         break;
-
+      case "message":
+        if (this.message.hasError('required')){
+          this.errorMessage.set('A message is required');
+        } else if (this.message.hasError('minlength')){
+          this.errorMessage.set('Not enough characters');
+        } else if (this.message.hasError('maxlength')){
+          this.errorMessage.set('Too many characters');
+        } else{
+          this.errorMessage.set('');
+        }   
+        break;
     }
   }
 }
