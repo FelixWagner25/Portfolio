@@ -25,7 +25,9 @@ export class Contact {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly message = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(4096)]);
 
-  errorMessage = signal('');
+  nameErrorMessage = signal('');
+  emailErrorMessage = signal('');
+  messageErrorMessage = signal('');
 
   constructor(){
     merge(this.name.statusChanges, this.name.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('name'));
@@ -49,35 +51,35 @@ export class Contact {
 
   processNameErrorMessageUpdate(){
     if(this.name.hasError('required')){
-      this.errorMessage.set('Your name is required');
+      this.nameErrorMessage.set('Your name is required');
     } else if (this.name.hasError('minlength')){
-      this.errorMessage.set('Not enough characters');
+      this.nameErrorMessage.set('Not enough characters');
     } else if (this.name.hasError('maxlength')){
-      this.errorMessage.set('Too many characters');
+      this.nameErrorMessage.set('Too many characters');
     } else {
-      this.errorMessage.set('');
+      this.nameErrorMessage.set('');
     }
   }
 
   processEmailErrorMessageUpdate(){
     if (this.email.hasError('required')){
-      this.errorMessage.set('Your email address is required');
+      this.emailErrorMessage.set('Your email address is required');
     } else if (this.email.hasError('email')){
-      this.errorMessage.set('Not a valid email address');
+      this.emailErrorMessage.set('Not a valid email address');
     } else{
-      this.errorMessage.set('');
+      this.emailErrorMessage.set('');
     }  
   }
 
   processMessageErrorMessageUpdate(){
     if (this.message.hasError('required')){
-      this.errorMessage.set('A message is required');
+      this.messageErrorMessage.set('A message is required');
     } else if (this.message.hasError('minlength')){
-      this.errorMessage.set('Not enough characters');
+      this.messageErrorMessage.set('Not enough characters');
     } else if (this.message.hasError('maxlength')){
-      this.errorMessage.set('Too many characters');
+      this.messageErrorMessage.set('Too many characters');
     } else{
-      this.errorMessage.set('');
+      this.messageErrorMessage.set('');
     }   
   }
 }

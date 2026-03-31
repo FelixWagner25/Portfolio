@@ -14,7 +14,7 @@
             required
           />
           @if (name.invalid) {
-            <mat-error>{{ errorMessage() }}</mat-error>
+            <mat-error>{{ nameErrorMessage() }}</mat-error>
           }
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -28,7 +28,7 @@
             required
           />
           @if (email.invalid) {
-            <mat-error>{{ errorMessage() }}</mat-error>
+            <mat-error>{{ emailErrorMessage() }}</mat-error>
           }
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -42,7 +42,7 @@
           >
           </textarea>
           @if (message.invalid) {
-            <mat-error>{{ errorMessage() }}</mat-error>
+            <mat-error>{{ messageErrorMessage() }}</mat-error>
           }
         </mat-form-field>
         <div class="checkbox-wrap">
