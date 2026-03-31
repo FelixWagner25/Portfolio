@@ -101,12 +101,12 @@ app-contact {
 
 app-contact {
   @include mat.checkbox-overrides((
-  selected-checkmark-color: $background-color,
-  selected-focus-icon-color: $highlight-color,
-  selected-focus-state-layer-color: $background-color,
-  selected-icon-color: $highlight-color,
-  unselected-focus-icon-color: $background-color,
-  unselected-icon-color: $background-color,
-  unselected-hover-icon-color: $highlight-color,
+    selected-checkmark-color: $background-color,
+    selected-focus-icon-color: $highlight-color,
+    selected-focus-state-layer-color: $background-color,
+    selected-icon-color: $highlight-color,
+    unselected-focus-icon-color: $background-color,
+    unselected-icon-color: $background-color,
+    unselected-hover-icon-color: $highlight-color,
   ));
 }

@@ -9,8 +9,19 @@
           <input type="text" id="contact-name" matInput />
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Your email *</mat-label>
-          <input name="contact-email" type="email" matInput />
+          <mat-label>Your email</mat-label>
+          <input
+            matInput
+            name="contact-email"
+            type="email"
+            placeholder="yourcontact@domain.com"
+            [formControl]="email"
+            (blur)="updateErrorMessage()"
+            required
+          />
+          @if (email.invalid) {
+            <mat-error>{{ errorMessage() }}</mat-error>
+          }
         </mat-form-field>
         <mat-form-field appearance="outline" class="custom-textarea">
           <mat-label>Your message *</mat-label>
