@@ -96,6 +96,9 @@ export interface ContactTexts {
   nameRequiredError: string;
   emailRequiredError: string;
   messageRequiredError: string;
+  tooLessCharacterError: string;
+  tooManyCharactersError: string;
+  emailPatternError: string;
   privacyPrefix: string;
   privacyLink: string;
   privacySuffix: string;
@@ -106,12 +109,15 @@ export const germanTexts: ContactTexts = {
   title: "Kontakt",
   subtitle: "Lassen Sie uns ins Gespräch kommen!",
   nameLabel: "Ihr Name",
-  emailLabel: "Ihre E-Mail Adresse",
+  emailLabel: "Ihre E-Mail-Adresse",
   emailPlaceholder: "kontakt@domain.de",
   messageLabel: "Ihre Nachricht",
   nameRequiredError: "Ihr Name ist erforderlich",
-  emailRequiredError: "Ihre E-Mail Adresse ist erforderlich",
+  emailRequiredError: "Ihre E-Mail-Adresse ist erforderlich",
   messageRequiredError: "Ihre Nachricht ist erforderlich",
+  tooLessCharacterError: "Zu wenig Zeichen",
+  tooManyCharactersError: "Zu viele Zeichen",
+  emailPatternError: "Keine valide E-Mail-Adresse",
   privacyPrefix: "Ich habe die ",
   privacyLink: "Datenschutzerklärung",
   privacySuffix: " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
@@ -128,6 +134,9 @@ export const englishTexts: ContactTexts = {
   nameRequiredError: "Your name is required",
   emailRequiredError: "Your email is required",
   messageRequiredError: "Your message is required",
+  tooLessCharacterError: "Too less characters",
+  tooManyCharactersError: "Too many characters",
+  emailPatternError: "Not a valid email address",
   privacyPrefix: "I read the ",
   privacyLink: "privacy policy",
   privacySuffix: " and agree to the processing of my data as outlined.",
