@@ -9,6 +9,9 @@ section{
 .footer-wrap{
     @include mixin.d-flex($justify-content: space-between);
     padding-bottom: 16px;
+    > div{
+        @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 8px)
+    }
 }
 
 a{
