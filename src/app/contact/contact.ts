@@ -36,36 +36,48 @@ export class Contact {
   updateErrorMessage(inputType:string){
     switch (inputType) {
       case "name":
-        if(this.name.hasError('required')){
-          this.errorMessage.set('Your name is required');
-        } else if (this.name.hasError('minlength')){
-          this.errorMessage.set('Not enough characters');
-        } else if (this.name.hasError('maxlength')){
-          this.errorMessage.set('Too many characters');
-        } else {
-          this.errorMessage.set('');
-        }
+        this.processNameErrorMessageUpdate();
         break;
       case "email":
-        if (this.email.hasError('required')){
-          this.errorMessage.set('Your email address is required');
-        } else if (this.email.hasError('email')){
-          this.errorMessage.set('Not a valid email address');
-        } else{
-          this.errorMessage.set('');
-        }   
+        this.processEmailErrorMessageUpdate(); 
         break;
       case "message":
-        if (this.message.hasError('required')){
-          this.errorMessage.set('A message is required');
-        } else if (this.message.hasError('minlength')){
-          this.errorMessage.set('Not enough characters');
-        } else if (this.message.hasError('maxlength')){
-          this.errorMessage.set('Too many characters');
-        } else{
-          this.errorMessage.set('');
-        }   
+        this.processMessageErrorMessageUpdate();  
         break;
     }
+  }
+
+  processNameErrorMessageUpdate(){
+    if(this.name.hasError('required')){
+      this.errorMessage.set('Your name is required');
+    } else if (this.name.hasError('minlength')){
+      this.errorMessage.set('Not enough characters');
+    } else if (this.name.hasError('maxlength')){
+      this.errorMessage.set('Too many characters');
+    } else {
+      this.errorMessage.set('');
+    }
+  }
+
+  processEmailErrorMessageUpdate(){
+    if (this.email.hasError('required')){
+      this.errorMessage.set('Your email address is required');
+    } else if (this.email.hasError('email')){
+      this.errorMessage.set('Not a valid email address');
+    } else{
+      this.errorMessage.set('');
+    }  
+  }
+
+  processMessageErrorMessageUpdate(){
+    if (this.message.hasError('required')){
+      this.errorMessage.set('A message is required');
+    } else if (this.message.hasError('minlength')){
+      this.errorMessage.set('Not enough characters');
+    } else if (this.message.hasError('maxlength')){
+      this.errorMessage.set('Too many characters');
+    } else{
+      this.errorMessage.set('');
+    }   
   }
 }
