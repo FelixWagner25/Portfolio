@@ -48,7 +48,8 @@
         <div class="checkbox-wrap">
           <mat-checkbox type="checkbox" name="contact-checkbox" id="input-checkbox" />
           <span
-            >{{ texts.privacyPrefix }}<a>{{ texts.privacyLink }}</a> {{ texts.privacySuffix }}
+            >{{ texts.privacyPrefix }}<a routerLink="privacy-policy">{{ texts.privacyLink }}</a>
+            {{ texts.privacySuffix }}
           </span>
         </div>
         <input class="btn-main btn-contact" type="submit" value="{{ texts.submit }}" />

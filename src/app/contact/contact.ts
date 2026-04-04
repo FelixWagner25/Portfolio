@@ -7,12 +7,13 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { merge, map } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [AsyncPipe, MatInput, MatFormField, MatLabel, MatCheckbox, FormsModule, ReactiveFormsModule, MatError],
+  imports: [AsyncPipe, MatInput, MatFormField, MatLabel, MatCheckbox, FormsModule, ReactiveFormsModule, MatError, RouterLink],
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

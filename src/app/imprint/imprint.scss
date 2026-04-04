@@ -1,0 +1,13 @@
+@use "../main/main.scss" as main;
+@use "../../styles/mixins.scss" as mixin;
+@use "../../styles/styles.scss" as styles;
+
+section{
+    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:40px)
+}
+
+h2{
+    @include mixin.font("Overpass", 800, 24px);
+    color: styles.$highlight-color;
+}
+
