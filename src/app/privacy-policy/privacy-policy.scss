@@ -1,0 +1,26 @@
+@use "../main/main.scss" as main;
+@use "../../styles/mixins.scss" as mixin;
+@use "../../styles/styles.scss" as styles;
+
+
+section{
+    @include mixin.font("Overpass", 400, 16px);
+    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:40px);
+    > div{
+        @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:8px);
+        > div{
+            @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:4px);
+        }
+    };
+}
+
+h2{
+    padding-top: 16px;
+    @include mixin.font("Overpass", 800, 33px);
+}
+
+h3{
+    padding-top: 16px;
+    @include mixin.font("Overpass", 800, 24px);
+    color: styles.$highlight-color;
+}

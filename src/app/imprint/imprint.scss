@@ -3,7 +3,9 @@
 @use "../../styles/styles.scss" as styles;
 
 section{
-    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:40px)
+    @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:40px);
+    @include mixin.font("Overpass", 700, 19px);
+
 }
 
 h2{
