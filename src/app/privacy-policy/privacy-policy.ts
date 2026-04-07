@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FooterMinorPage } from '../shared/footer-minor-side/footer-minor-side';
+import { FooterMinorSide } from '../shared/footer-minor-side/footer-minor-side';
 
 @Component({
   standalone: true,
   selector: 'app-privacy-policy',
-  imports: [FooterMinorPage],
+  imports: [FooterMinorSide],
   templateUrl: './privacy-policy.html',
   styleUrl: './privacy-policy.scss',
 })
