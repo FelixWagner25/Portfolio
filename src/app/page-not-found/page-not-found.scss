@@ -1,0 +1,6 @@
+@use '../../styles/mixins.scss' as mixin;
+
+section{
+    height: calc(100vh - 390px);
+    @include mixin.font("Overpass", 400, 20px);
+}
