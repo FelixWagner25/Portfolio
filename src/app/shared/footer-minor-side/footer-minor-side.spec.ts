@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterMinorPage } from './footer-minor-side';
+import { FooterMinorSide } from './footer-minor-side';
 
 describe('Footer', () => {
-  let component: FooterMinorPage;
-  let fixture: ComponentFixture<FooterMinorPage>;
+  let component: FooterMinorSide;
+  let fixture: ComponentFixture<FooterMinorSide>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FooterMinorPage]
+      imports: [FooterMinorSide]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FooterMinorPage);
+    fixture = TestBed.createComponent(FooterMinorSide);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
