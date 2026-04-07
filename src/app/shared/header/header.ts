@@ -3,12 +3,13 @@ import { AppLanguage, LanguageService } from '../services/language.service';
 import { AsyncPipe } from '@angular/common';
 import { MatMenu, MatMenuTrigger, MatMenuItem } from '@angular/material/menu';
 import { MatIconButton } from '@angular/material/button';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
   standalone: true,
   selector: 'app-header',
-  imports: [AsyncPipe, MatMenuTrigger, MatIconButton, MatMenu, MatMenuItem],
+  imports: [AsyncPipe, MatMenuTrigger, MatIconButton, MatMenu, MatMenuItem, RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
