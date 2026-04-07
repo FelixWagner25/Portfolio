@@ -1,23 +1,27 @@
-<section>
-  <a href="#">
-    <img src="assets/img/initials_brackets_black_white.png" alt="Back home" />
-  </a>
-  <div class="menu-lang-wrap">
-    <div class="lang-wrap">
-      <button (click)="setLanguage('en')" [class.outlined]="(language$ | async) === 'en'">
-        EN
-      </button>
-      <button (click)="setLanguage('de')" [class.outlined]="(language$ | async) === 'de'">
-        DE
-      </button>
-    </div>
-    <button matIconButton [matMenuTriggerFor]="menu" aria-label="Menu button">
-      <img src="assets/icons/menu.svg" alt="Menu" />
-    </button>
-    <mat-menu #menu="matMenu">
-      <a href="#about-me" mat-menu-item>About me</a>
-      <a href="#my-skills" mat-menu-item>My skills</a>
-      <a href="#my-portfolio" mat-menu-item>Portfolio</a>
-    </mat-menu>
+<div class="center-content">
+  <div class="max-width-1440px">
+    <section>
+      <a href="#">
+        <img src="assets/img/initials_brackets_black_white.png" alt="Back home" />
+      </a>
+      <div class="menu-lang-wrap">
+        <div class="lang-wrap">
+          <button (click)="setLanguage('en')" [class.outlined]="(language$ | async) === 'en'">
+            EN
+          </button>
+          <button (click)="setLanguage('de')" [class.outlined]="(language$ | async) === 'de'">
+            DE
+          </button>
+        </div>
+        <button matIconButton [matMenuTriggerFor]="menu" aria-label="Menu button">
+          <img src="assets/icons/menu.svg" alt="Menu" />
+        </button>
+        <mat-menu #menu="matMenu">
+          <a href="#about-me" mat-menu-item>About me</a>
+          <a href="#my-skills" mat-menu-item>My skills</a>
+          <a href="#my-portfolio" mat-menu-item>Portfolio</a>
+        </mat-menu>
+      </div>
+    </section>
   </div>
-</section>
+</div>
