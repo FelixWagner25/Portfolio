@@ -5,7 +5,7 @@
 section{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:40px);
     @include mixin.font("Overpass", 700, 19px);
-
+    height: calc(100vh - 390px);
 }
 
 h2{
