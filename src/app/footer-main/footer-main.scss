@@ -1,0 +1,61 @@
+@use '../../styles/mixins.scss' as mixin;
+@use '../../styles/styles.scss' as styles;
+
+section{
+    background-color: black;
+    color: #FFFCF3;
+}
+
+.footer-wrap{
+    @include mixin.d-flex($justify-content: space-between);
+    padding-bottom: 16px;
+    > div{
+        @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 8px)
+    }
+}
+
+a{
+    color: #FFFCF3;
+}
+
+.logo{
+    width: 67px;
+    height: 30px;
+}
+
+.footer-text{
+    @include mixin.font("Overpass", 400, 22px)
+}
+
+.icon-imprint-wrap{
+    @include mixin.d-flex($flex-direction: column, $justify-content: flex-end, $align-items: flex-end)
+}
+
+.icon-wrap{
+    @include mixin.d-flex($gap: 10px);
+
+    a{
+    > img {
+        width: 40px;
+        height: 40px;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+}
+
+.imprint{
+    @include mixin.font("Overpass", 400, 16px);
+    padding: 5px 10px;
+    &:hover{
+        font-weight: bold;
+    }
+}
+
+
+.footer-top{
+    height: 200px ;
+    width: 100%;
+    background-image: linear-gradient(5deg, black 0%, black 50% , #FFFCF3 50%, #FFFCF3 100%);
+}
