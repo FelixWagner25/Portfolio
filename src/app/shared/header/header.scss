@@ -1,14 +1,16 @@
 @use '../../../styles/mixins.scss' as mixin;
 @use '../../../styles/styles.scss' as styles;
 
-
 section{
     @include mixin.d-flex($justify-content: space-between);
     height: 92px;
+    background-color: styles.$background-color;
+}
+
+.sticky{
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: styles.$background-color;
 }
 
 a{
