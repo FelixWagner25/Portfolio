@@ -45,13 +45,12 @@
             <mat-error>{{ messageErrorMessage() }}</mat-error>
           }
         </mat-form-field>
-        <div class="checkbox-wrap">
-          <mat-checkbox type="checkbox" name="contact-checkbox" id="input-checkbox" />
+        <mat-checkbox type="checkbox" class="contact-checkbox" id="input-checkbox">
           <span
             >{{ texts.privacyPrefix }}<a routerLink="privacy-policy">{{ texts.privacyLink }}</a>
             {{ texts.privacySuffix }}
           </span>
-        </div>
+        </mat-checkbox>
         <input class="btn-main btn-contact" type="submit" value="{{ texts.submit }}" />
       </form>
     </div>

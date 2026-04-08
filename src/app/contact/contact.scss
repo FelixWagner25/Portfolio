@@ -42,6 +42,15 @@ mat-form-field{
     width: 613px;
 }
 
+.contact-checkbox span {
+  color: styles.$background-color;
+  @include mixin.font("Overpass", 400, 14px);
+}
+
+.contact-checkbox a {
+  color: styles.$highlight-color;
+}
+
 .btn-contact{
     color: styles.$background-color;
     border: 4px solid styles.$background-color;
