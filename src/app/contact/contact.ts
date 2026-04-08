@@ -28,15 +28,18 @@ export class Contact {
   readonly name = new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(512)]);
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly message = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(4096)]);
+  readonly checkbox = new FormControl(false, Validators.requiredTrue);
 
   nameErrorMessage = signal('');
   emailErrorMessage = signal('');
   messageErrorMessage = signal('');
+  checkboxErrorMessage = signal('');
 
   constructor(){
     merge(this.name.statusChanges, this.name.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('name'));
     merge(this.email.statusChanges, this.email.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage('email'));
     merge(this.message.statusChanges, this.message.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage('message'));
+    merge(this.checkbox.statusChanges,this.checkbox.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('checkbox'));
   }
 
   updateErrorMessage(inputType:string){
@@ -49,6 +52,9 @@ export class Contact {
         break;
       case "message":
         this.processMessageErrorMessageUpdate();  
+        break;
+      case "checkbox":
+        this.processCheckboxErrorMessageUpdate();
         break;
     }
   }
@@ -86,6 +92,15 @@ export class Contact {
       this.messageErrorMessage.set('');
     }   
   }
+
+  processCheckboxErrorMessageUpdate(){
+    if( this.checkbox.hasError('required')){
+      this.checkboxErrorMessage.set(this.texts().checkboxRequiredError);
+    } else {
+      this.checkboxErrorMessage.set('')
+    };
+  }
+
 }
 
 export interface ContactTexts {
@@ -101,6 +116,7 @@ export interface ContactTexts {
   tooLessCharacterError: string;
   tooManyCharactersError: string;
   emailPatternError: string;
+  checkboxRequiredError: string;
   privacyPrefix: string;
   privacyLink: string;
   privacySuffix: string;
@@ -120,6 +136,7 @@ export const germanTexts: ContactTexts = {
   tooLessCharacterError: "Zu wenig Zeichen",
   tooManyCharactersError: "Zu viele Zeichen",
   emailPatternError: "Keine valide E-Mail-Adresse",
+  checkboxRequiredError: "Ihre Bestätiung ist erforderlich",
   privacyPrefix: "Ich habe die ",
   privacyLink: "Datenschutzerklärung",
   privacySuffix: " gelesen und stimme der Verarbeitung meiner Daten zu.",
@@ -139,6 +156,7 @@ export const englishTexts: ContactTexts = {
   tooLessCharacterError: "Too less characters",
   tooManyCharactersError: "Too many characters",
   emailPatternError: "Not a valid email address",
+  checkboxRequiredError: "Your agreement is required",
   privacyPrefix: "I read the ",
   privacyLink: "privacy policy",
   privacySuffix: " and agree to the processing of my data as outlined.",

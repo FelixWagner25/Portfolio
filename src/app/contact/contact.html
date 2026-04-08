@@ -45,12 +45,22 @@
             <mat-error>{{ messageErrorMessage() }}</mat-error>
           }
         </mat-form-field>
-        <mat-checkbox type="checkbox" class="contact-checkbox" id="input-checkbox">
+        <mat-checkbox
+          type="checkbox"
+          class="contact-checkbox"
+          id="input-checkbox"
+          [formControl]="checkbox"
+        >
           <span
             >{{ texts.privacyPrefix }}<a routerLink="privacy-policy">{{ texts.privacyLink }}</a>
             {{ texts.privacySuffix }}
           </span>
+          <br />
+          @if (checkbox.invalid && checkbox.touched) {
+            <mat-error>{{ checkboxErrorMessage() }}</mat-error>
+          }
         </mat-checkbox>
+
         <input class="btn-main btn-contact" type="submit" value="{{ texts.submit }}" />
       </form>
     </div>
