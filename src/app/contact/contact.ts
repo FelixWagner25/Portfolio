@@ -94,7 +94,7 @@ export class Contact {
   }
 
   processCheckboxErrorMessageUpdate(){
-    if( this.checkbox.hasError('required')){
+    if (this.checkbox.hasError('required')){
       this.checkboxErrorMessage.set(this.texts().checkboxRequiredError);
     } else {
       this.checkboxErrorMessage.set('')
