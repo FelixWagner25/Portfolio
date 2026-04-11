@@ -1,22 +1,41 @@
 <div class="center-content">
   <div class="max-width-1440px">
     <section>
-      <h1 class="h1-main">Legal Notice</h1>
-      <div>
-        <h2>Imprint</h2>
-        <p>
-          Felix Wagner<br />
-          Erich-Klabunde-Hof 5<br />
-          30419 Hannover
-        </p>
-      </div>
-      <div>
-        <h2>Contact</h2>
-        <p>
-          Telefon: +49 (0) 511 3673 2448<br />
-          E-Mail: felixwagner26@gmail.com
-        </p>
-      </div>
+      @if ((language$ | async) === 'en') {
+        <h1 class="h1-main">Legal Notice</h1>
+        <div>
+          <h2>Imprint</h2>
+          <p>
+            Felix Wagner<br />
+            Erich-Klabunde-Hof 5<br />
+            30419 Hannover
+          </p>
+        </div>
+        <div>
+          <h2>Contact</h2>
+          <p>
+            Phone: +49 (0) 511 3673 2448<br />
+            Email: felixwagner26@gmail.com
+          </p>
+        </div>
+      }
+      @if ((language$ | async) === 'de') {
+        <h1 class="h1-main">Impressum</h1>
+        <div>
+          <p>
+            Felix Wagner<br />
+            Erich-Klabunde-Hof 5<br />
+            30419 Hannover
+          </p>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <p>
+            Telefon: +49 (0) 511 3673 2448<br />
+            E-Mail: felixwagner26@gmail.com
+          </p>
+        </div>
+      }
     </section>
   </div>
 </div>
