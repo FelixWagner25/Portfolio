@@ -3,7 +3,7 @@
     <h1>{{ texts.title }}</h1>
     <div>
       <div class="subtitle">{{ texts.subtitle }}</div>
-      <form class="contact-form">
+      <form class="contact-form" [formGroup]="contactFormInput">
         <mat-form-field appearance="outline" class="custom-text-input">
           <mat-label>{{ texts.nameLabel }}</mat-label>
           <input
@@ -65,8 +65,8 @@
           class="btn-main btn-contact"
           type="submit"
           value="{{ texts.submit }}"
-          [disabled]="!formComplete"
-          [class.disabled]="!formComplete"
+          [disabled]="contactFormInput.invalid"
+          [class.disabled]="contactFormInput.invalid"
         />
       </form>
     </div>

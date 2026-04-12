@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { MatFormField, MatLabel } from '@angular/material/select';
 import { MatInput, MatError } from '@angular/material/input';
 import { MatCheckbox } from '@angular/material/checkbox';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { merge, map } from 'rxjs';
 import { RouterLink } from '@angular/router';
@@ -31,6 +31,13 @@ export class Contact {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly message = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(4096)]);
   readonly checkbox = new FormControl(false, Validators.requiredTrue);
+
+  readonly contactFormInput = new FormGroup({
+    name: this.name,
+    email: this.email,
+    message: this.message,
+    checkbox: this.checkbox,
+  })
 
   nameErrorMessage = signal('');
   emailErrorMessage = signal('');
