@@ -61,7 +61,13 @@
           }
         </mat-checkbox>
 
-        <input class="btn-main btn-contact" type="submit" value="{{ texts.submit }}" />
+        <input
+          class="btn-main btn-contact"
+          type="submit"
+          value="{{ texts.submit }}"
+          [disabled]="!formComplete"
+          [class.disabled]="!formComplete"
+        />
       </form>
     </div>
   }

@@ -22,6 +22,8 @@ export class Contact {
   private languageService = inject(LanguageService);
   language$ = this.languageService.language$;
 
+  formComplete: boolean = false;
+
   readonly texts$ = this.language$.pipe(map((language) => language === 'de' ? germanTexts: englishTexts));
   readonly texts = toSignal(this.texts$, {initialValue: englishTexts});
 
