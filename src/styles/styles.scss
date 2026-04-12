@@ -105,8 +105,9 @@ app-contact {
     selected-focus-icon-color: $highlight-color,
     selected-focus-state-layer-color: $background-color,
     selected-icon-color: $highlight-color,
-    unselected-focus-icon-color: $background-color,
+    unselected-focus-icon-color: #BA1200,
     unselected-icon-color: $background-color,
     unselected-hover-icon-color: $highlight-color,
+    unselected-hover-state-layer-color: $background-color,
   ));
 }
