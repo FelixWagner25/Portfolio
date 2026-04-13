@@ -32,7 +32,7 @@ h1{
         &:hover{
             transition-delay: 100ms;
             transform: rotateY(360deg);
-            transition: all 1s ease;
+            transition: all 1.25s ease;
         }
     }
 }
@@ -46,7 +46,7 @@ h1{
         &:hover{
             transition-delay: 100ms;
             transform: rotate(-360deg);
-            transition: all 1s ease;
+            transition: all 1.25s ease;
         }
     }
 }
