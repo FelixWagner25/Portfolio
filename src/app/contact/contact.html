@@ -68,6 +68,11 @@
           [disabled]="contactFormInput.invalid"
           [class.disabled]="contactFormInput.invalid"
         />
+        @if (sendMailSuccess()) {
+          <p>{{ texts.mailSentSuccess }}</p>
+        } @else {
+          <p>{{ sendMailError() }}</p>
+        }
       </form>
     </div>
   }

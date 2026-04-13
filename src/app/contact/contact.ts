@@ -176,6 +176,7 @@ export interface ContactTexts {
   tooManyCharactersError: string;
   emailPatternError: string;
   checkboxRequiredError: string;
+  mailSentSuccess: string;
   privacyPrefix: string;
   privacyLink: string;
   privacySuffix: string;
@@ -196,6 +197,7 @@ export const germanTexts: ContactTexts = {
   tooManyCharactersError: "Zu viele Zeichen",
   emailPatternError: "Keine valide E-Mail-Adresse",
   checkboxRequiredError: "Ihre Bestätiung ist erforderlich",
+  mailSentSuccess: "Nachricht erfolgreich gesendet",
   privacyPrefix: "Ich habe die ",
   privacyLink: "Datenschutzerklärung",
   privacySuffix: " gelesen und stimme der Verarbeitung meiner Daten zu.",
@@ -216,6 +218,7 @@ export const englishTexts: ContactTexts = {
   tooManyCharactersError: "Too many characters",
   emailPatternError: "Not a valid email address",
   checkboxRequiredError: "Your agreement is required",
+  mailSentSuccess: "Message send successfully",
   privacyPrefix: "I read the ",
   privacyLink: "privacy policy",
   privacySuffix: " and agree to the processing of my data as outlined.",
