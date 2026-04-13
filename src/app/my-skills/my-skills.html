@@ -1,7 +1,12 @@
 <div class="center-content">
   <div class="max-width-1440px">
     <section>
-      <h1 class="h1-main">My skills</h1>
+      @if ((language$ | async) === 'en') {
+        <h1 class="h1-main">My skills</h1>
+      }
+      @if ((language$ | async) === 'de') {
+        <h1 class="h1-main">Fähigkeiten</h1>
+      }
       <div>
         <div class="skills-content">
           <div class="skill-icon-wrap">
