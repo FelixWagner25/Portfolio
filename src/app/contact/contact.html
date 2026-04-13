@@ -13,7 +13,7 @@
             (blur)="updateErrorMessage('name')"
             required
           />
-          @if (name.invalid) {
+          @if (name.invalid && name.touched) {
             <mat-error>{{ nameErrorMessage() }}</mat-error>
           }
         </mat-form-field>
@@ -27,7 +27,7 @@
             (blur)="updateErrorMessage('email')"
             required
           />
-          @if (email.invalid) {
+          @if (email.invalid && email.touched) {
             <mat-error>{{ emailErrorMessage() }}</mat-error>
           }
         </mat-form-field>
@@ -41,7 +41,7 @@
             required
           >
           </textarea>
-          @if (message.invalid) {
+          @if (message.invalid && message.touched) {
             <mat-error>{{ messageErrorMessage() }}</mat-error>
           }
         </mat-form-field>
