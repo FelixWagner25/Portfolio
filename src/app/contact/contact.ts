@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { MatFormField, MatLabel } from '@angular/material/select';
 import { MatInput, MatError } from '@angular/material/input';
 import { MatCheckbox } from '@angular/material/checkbox';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { merge, map } from 'rxjs';
 import { RouterLink } from '@angular/router';
@@ -60,7 +60,7 @@ export class Contact {
     merge(this.checkbox.statusChanges,this.checkbox.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('checkbox'));
   }
 
-  submitForm(){
+  submitForm(formDirective: FormGroupDirective){
     if(this.contactFormInput.invalid){
       this.contactFormInput.markAllAsTouched();
       return;
@@ -84,7 +84,7 @@ export class Contact {
 
         if (response.success){
           this.sendMailSuccess.set(true);
-          this.contactFormInput.reset({
+          formDirective.resetForm({
             name: '',
             email: '',
             message: '',
