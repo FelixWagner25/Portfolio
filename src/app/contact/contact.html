@@ -3,7 +3,7 @@
     <h1>{{ texts.title }}</h1>
     <div>
       <div class="subtitle">{{ texts.subtitle }}</div>
-      <form class="contact-form" [formGroup]="contactFormInput">
+      <form class="contact-form" [formGroup]="contactFormInput" (ngSubmit)="submitForm()">
         <mat-form-field appearance="outline" class="custom-text-input">
           <mat-label>{{ texts.nameLabel }}</mat-label>
           <input

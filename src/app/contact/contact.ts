@@ -8,6 +8,8 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
 import { merge, map } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -21,6 +23,8 @@ import { RouterLink } from '@angular/router';
 export class Contact {
   private languageService = inject(LanguageService);
   language$ = this.languageService.language$;
+
+  private http = inject(HttpClient);
 
   formComplete: boolean = false;
 
@@ -39,6 +43,11 @@ export class Contact {
     checkbox: this.checkbox,
   })
 
+  isSendingMail = signal(false);
+  sendMailSuccess = signal(false);
+  sendMailError = signal('');
+  
+
   nameErrorMessage = signal('');
   emailErrorMessage = signal('');
   messageErrorMessage = signal('');
@@ -50,6 +59,47 @@ export class Contact {
     merge(this.message.statusChanges, this.message.valueChanges).pipe(takeUntilDestroyed()).subscribe(() => this.updateErrorMessage('message'));
     merge(this.checkbox.statusChanges,this.checkbox.valueChanges).pipe(takeUntilDestroyed()).subscribe(()=> this.updateErrorMessage('checkbox'));
   }
+
+  submitForm(){
+    if(this.contactFormInput.invalid){
+      this.contactFormInput.markAllAsTouched();
+      return;
+    }
+
+    const messageData = {
+      name: this.name.value ?? '',
+      email: this.email.value ?? '',
+      message: this.message.value ?? '',
+    };
+
+    this.isSendingMail.set(true);
+    this.sendMailSuccess.set(false);
+    this.sendMailError.set('')
+
+    this.http.post<{ success: boolean; error?: string}>(
+      'https://felixwagner.eu/contact.php', messageData
+    ).subscribe({
+      next: (response) => {
+        this.isSendingMail.set(false);
+
+        if (response.success){
+          this.sendMailSuccess.set(true);
+          this.contactFormInput.reset({
+            name: '',
+            email: '',
+            message: '',
+            checkbox: false
+          });
+         } else {
+            this.sendMailError.set(response.error ?? 'Unknown error on sending message');
+          }
+        },
+        error: (error) => {
+          this.isSendingMail.set(false);
+          this.sendMailError.set(error?.error?.error ?? 'Server error');
+        }
+      });
+    }
 
   updateErrorMessage(inputType:string){
     switch (inputType) {
