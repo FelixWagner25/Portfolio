@@ -13,15 +13,11 @@
             DE
           </button>
         </div>
-        <button matIconButton [matMenuTriggerFor]="menu" aria-label="Menu button">
+        <button (click)="toggleMenuOverlay()">
           <img src="assets/icons/menu.svg" alt="Menu" />
         </button>
-        <mat-menu #menu="matMenu">
-          <a routerLink="" fragment="about-me" mat-menu-item>About me</a>
-          <a routerLink="" fragment="my-skills" mat-menu-item>My skills</a>
-          <a routerLink="" fragment="my-portfolio" mat-menu-item>Portfolio</a>
-        </mat-menu>
       </div>
     </section>
   </div>
 </div>
+<app-menu-overlay [class.menu-closed]="!showOverlay" #menu></app-menu-overlay>
