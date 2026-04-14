@@ -13,13 +13,13 @@ section{
     padding-top: 102px;
     @include mixin.d-flex($flex-direction: column, $gap: 16px);
     > b{
-        @include mixin.font("Syne", 800, 92px, 100%, -2.5%)
+        @include mixin.font("Syne", 800, 128px, 100%, -2.5%)
     }
     > div{
         @include mixin.d-flex($gap: 16px);
         width: 100%;
         > span{
-            @include mixin.font("Overpass", 700, 32px, 100%, -2.5%);
+            @include mixin.font("Overpass", 700, 48px, 100%, -2.5%);
             color: styles.$highlight-color;
             white-space: nowrap;
         }
@@ -27,7 +27,7 @@ section{
 }
 
 .hl{
-    width: min(100%, 520px);
+    width: min(100%, 704px);
     border-top: 3px solid black;
     border-radius: 8px;
 }
@@ -46,4 +46,18 @@ section{
 
 .arrow{
     background-image: none;
+}
+
+@media (max-width: 1440px) {
+    .title-wrap > b{
+        font-size: 92px;
+    }
+
+    .title-wrap > div > span{
+        font-size: 32px;
+    }
+
+    .hl{    
+        width: min(100%, 520px);
+    }
 }
