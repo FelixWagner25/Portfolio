@@ -45,7 +45,7 @@ h1{
         height: 75px;
         &:hover{
             transition-delay: 100ms;
-            transform: rotate(-360deg);
+            transform: rotate(-360deg) scale(1.25);
             transition: all 1.25s ease;
         }
     }
