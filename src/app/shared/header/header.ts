@@ -20,17 +20,15 @@ export class Header {
   private returnUrl = "";
 
   private menuService = inject(MenuService);
-  showMenuStatus = this.menuService.showMenu$
+  showMenuStatus = this.menuService.getShowMenuStatus();
 
   setLanguage(language: AppLanguage){
     this.languageService.setLanguage(language);
   }
 
   toggleMenu(){
-    console.log(this.showMenuStatus);
     this.menuService.toggleShowMenu();
-    console.log(this.showMenuStatus);
-    if (this.showMenuStatus) {
+    if (this.menuService.getShowMenuStatus()) {
       this.returnUrl = this.router.url
       this.router.navigate(['/menu']);
     } else {
