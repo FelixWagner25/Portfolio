@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuOverlay } from './menu-overlay';
+import { Menu } from './menu';
 
-describe('MenuOverlay', () => {
-  let component: MenuOverlay;
-  let fixture: ComponentFixture<MenuOverlay>;
+describe('Menu', () => {
+  let component: Menu;
+  let fixture: ComponentFixture<Menu>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MenuOverlay]
+      imports: [Menu]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MenuOverlay);
+    fixture = TestBed.createComponent(Menu);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

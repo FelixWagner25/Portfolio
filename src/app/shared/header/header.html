@@ -13,11 +13,10 @@
             DE
           </button>
         </div>
-        <button (click)="toggleMenuOverlay()">
+        <a routerLink="menu">
           <img src="assets/icons/menu.svg" alt="Menu" />
-        </button>
+        </a>
       </div>
     </section>
   </div>
 </div>
-<app-menu-overlay [class.menu-closed]="!showOverlay" #menu></app-menu-overlay>

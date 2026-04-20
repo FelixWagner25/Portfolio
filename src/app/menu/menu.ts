@@ -4,10 +4,10 @@ import { RouterLink } from "@angular/router";
 
 @Component({
   standalone: true,
-  selector: 'app-menu-overlay',
+  selector: 'app-menu',
   imports: [FooterMinorSide, RouterLink],
-  templateUrl: './menu-overlay.html',
-  styleUrl: './menu-overlay.scss',
+  templateUrl: './menu.html',
+  styleUrl: './menu.scss',
 })
-export class MenuOverlay {
+export class Menu {
 }
