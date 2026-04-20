@@ -27,6 +27,7 @@ html {
     density: 0,
   ));
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -46,6 +47,11 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100%;
+}
+
+body.menu-open{
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 @font-face {

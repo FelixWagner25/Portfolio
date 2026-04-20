@@ -24,10 +24,8 @@ export class Header {
   }
 
   toggleMenuOverlay(){
-    if (this.showOverlay == false) {
-      this.showOverlay = true;
-    } else if (this.showOverlay == true){
-      this.showOverlay = false
-    }
+    this.showOverlay = !this.showOverlay;
+    document.body.classList.toggle("menu-open", this.showOverlay);
   }
+
 }
