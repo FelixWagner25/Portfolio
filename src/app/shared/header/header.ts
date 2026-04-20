@@ -3,6 +3,7 @@ import { AppLanguage, LanguageService } from '../services/language.service';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from "@angular/router";
 import { Router } from '@angular/router';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   standalone: true,
@@ -18,21 +19,27 @@ export class Header {
   private router = inject(Router);
   private returnUrl = "";
 
-  public showOverlay: boolean = false;
+  private menuService = inject(MenuService);
+  showMenuStatus = this.menuService.showMenu$
 
   setLanguage(language: AppLanguage){
     this.languageService.setLanguage(language);
-    console.log(language);
   }
 
   toggleMenu(){
-    this.showOverlay = !this.showOverlay;
-    if (this.showOverlay) {
+    console.log(this.showMenuStatus);
+    this.menuService.toggleShowMenu();
+    console.log(this.showMenuStatus);
+    if (this.showMenuStatus) {
       this.returnUrl = this.router.url
-      console.log(this.returnUrl);
       this.router.navigate(['/menu']);
     } else {
       this.router.navigate([this.returnUrl]);
     }
+    console.log(this.returnUrl);
+  }
+
+  closeMenu(){
+    this.menuService.setShowMenu(false);
   }
 }
