@@ -20,7 +20,6 @@ export class Header {
   private returnUrl = "";
 
   private menuService = inject(MenuService);
-  showMenuStatus = this.menuService.getShowMenuStatus();
 
   setLanguage(language: AppLanguage){
     this.languageService.setLanguage(language);

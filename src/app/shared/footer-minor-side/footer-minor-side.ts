@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   standalone: true,
@@ -9,5 +10,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './footer-minor-side.scss',
 })
 export class FooterMinorSide {
+  private menuService = inject(MenuService);
 
+  closeMenu(){
+    this.menuService.setShowMenu(false);
+  }
 }

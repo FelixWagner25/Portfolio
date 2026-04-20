@@ -5,7 +5,7 @@
       <app-contact id="contact"></app-contact>
       <div class="footer-wrap">
         <div>
-          <a routerLink="">
+          <a routerLink="" (click)="closeMenu()">
             <img src="assets/img/initials_brackets_white_transparent.png" class="logo" />
           </a>
           <p class="footer-text">&copy; Felix Wagner, 2026</p>
@@ -23,7 +23,7 @@
               <img src="assets/icons/linkedin.svg" alt="Link to my Linkedin" />
             </a>
           </div>
-          <a class="imprint" routerLink="/imprint">Imprint</a>
+          <a class="imprint" routerLink="/imprint" (click)="closeMenu()">Imprint</a>
         </div>
       </div>
     </div>
