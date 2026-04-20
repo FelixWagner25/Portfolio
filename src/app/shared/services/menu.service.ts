@@ -14,7 +14,6 @@ export class MenuService {
 
   toggleShowMenu(){
     this.showMenuSubject.next(!this.showMenuSubject.value)
-    console.log(this.showMenuSubject.value);
   }
 
   getShowMenuStatus(){
