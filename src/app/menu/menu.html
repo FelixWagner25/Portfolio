@@ -1,10 +1,18 @@
 <div class="center-content">
   <div class="max-width-1440px">
-    <section>
-      <a routerLink="" fragment="about-me" class="menu-link" (click)="closeMenu()">About me</a>
-      <a routerLink="" fragment="my-skills" class="menu-link" (click)="closeMenu()">My skills</a>
-      <a routerLink="" fragment="my-portfolio" class="menu-link" (click)="closeMenu()">Portfolio</a>
-    </section>
+    @if (texts$ | async; as texts) {
+      <section>
+        <a routerLink="" fragment="about-me" class="menu-link" (click)="closeMenu()">{{
+          texts.aboutMe
+        }}</a>
+        <a routerLink="" fragment="my-skills" class="menu-link" (click)="closeMenu()">{{
+          texts.mySkills
+        }}</a>
+        <a routerLink="" fragment="my-portfolio" class="menu-link" (click)="closeMenu()">{{
+          texts.myPortfolio
+        }}</a>
+      </section>
+    }
   </div>
 </div>
 <app-footer-minor-side></app-footer-minor-side>
