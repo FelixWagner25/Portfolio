@@ -38,13 +38,14 @@ h1{
         left: 20px;
         width: 100%;
         height: 100%;
-        border: 4px solid transparent;
-        transition: border 0.3s ease;
+        border: 4px solid black;
         box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     &:hover::after{
-        border: 4px solid black;
+        opacity: 100;
     }
 
 }
@@ -65,13 +66,14 @@ h1{
         right: 20px;
         width: 100%;
         height: 100%;
-        border: 4px solid transparent;
-        transition: border 0.3s ease;
+        border: 4px solid black;
         box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
 
     &:hover::after{
-        border: 4px solid black;
+        opacity: 100;
     }
 
 }
