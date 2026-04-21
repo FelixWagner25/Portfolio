@@ -8,5 +8,41 @@ section{
     height: calc(100vh - 390px);
     > a {
         color: black;
+        @include mixin.d-flex();
+        width: 640px;
+        padding-bottom: 8px;
+        position: relative;
     }
+    > a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 39px;
+        border-bottom: 4px solid black;
+    }
+
+    > a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 52px;
+        border-left: 4px solid black;
+    }
+    
+    > a:hover::before {
+        width: 208px;
+        right: 0;
+        left: calc(640px - 208px);
+        border-color: styles.$highlight-color;
+        transition: 0.75s ease;
+        transition-delay: 0.3s;;    
+    }
+
+    > a:hover::after {
+        height: 0;
+        transition: 0.3s ease;
+    }
+
 }
