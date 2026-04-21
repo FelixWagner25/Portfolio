@@ -2,6 +2,8 @@
 @use "../../styles/mixins.scss" as mixin;
 @use "../../styles/styles.scss" as styles;
 
+$link-width: 640px;
+
 section{
     @include mixin.d-flex($flex-direction: column, $gap:35px);
     @include mixin.font("Syne", 700, 96px);
@@ -9,7 +11,7 @@ section{
     > a {
         color: black;
         @include mixin.d-flex();
-        width: 640px;
+        width: $link-width;
         padding-bottom: 8px;
         position: relative;
     }
@@ -30,11 +32,11 @@ section{
         height: 52px;
         border-left: 4px solid black;
     }
-    
+
     > a:hover::before {
         width: 208px;
         right: 0;
-        left: calc(640px - 208px);
+        left: calc($link-width - 208px);
         border-color: styles.$highlight-color;
         transition: 0.75s ease;
         transition-delay: 0.3s;;    
