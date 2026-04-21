@@ -42,10 +42,10 @@ export class Header {
 
   mapReturnUrl(url: string): string {
     switch (url) {
-      case "/#about-me": case "/#my-skills": case "/#my-portfolio": case "/#contact":
-        return "";
-      default:
+      case "": case "/imprint": case "/privacy-policy": case "/page-not-found": case "/menu":
         return url;
+      default:
+        return "";
     }
   }
 }
