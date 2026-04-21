@@ -43,10 +43,11 @@ h1{
     > img{
         width: 75px;
         height: 75px;
+        transform: rotate(0) scale(1);
+        transition: all 1.25s ease;
+        transition-delay: 100ms;
         &:hover{
-            transition-delay: 100ms;
             transform: rotate(-360deg) scale(1.25);
-            transition: all 1.25s ease;
         }
     }
 }
