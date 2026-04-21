@@ -1,18 +1,40 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
 
+$img-width: 482px;
+$img-height: 533px;
 
 section{
     @include mixin.font("Overpass", 400, 22px);
     @include mixin.d-flex($justify-content: space-between, $gap: 48px);
-    > div{
-        > img{
-            padding-right: 20px;
-            width: 482px;
-            height: 533px;
-            object-fit: contain;
-        }
+}
+
+.img-frame-onhover{
+    position: relative;
+    width: $img-width;
+    height: $img-height;
+    > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        transition: border 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    &:hover::after{
+        border: 4px solid black;
+    }
+
 }
 
 p{
