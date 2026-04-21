@@ -17,7 +17,7 @@ export class Header {
   language$ = this.languageService.language$;
 
   private router = inject(Router);
-  private returnUrl = "";
+  private returnUrl: string = "";
 
   private menuService = inject(MenuService);
 
@@ -28,7 +28,7 @@ export class Header {
   toggleMenu(){
     this.menuService.toggleShowMenu();
     if (this.menuService.getShowMenuStatus()) {
-      this.returnUrl = this.router.url
+      this.returnUrl = this.mapReturnUrl(this.router.url)
       this.router.navigate(['/menu']);
     } else {
       this.router.navigate([this.returnUrl]);
@@ -38,5 +38,14 @@ export class Header {
 
   closeMenu(){
     this.menuService.setShowMenu(false);
+  }
+
+  mapReturnUrl(url: string): string {
+    switch (url) {
+      case "/#about-me": case "/#my-skills": case "/#my-portfolio": case "/#contact":
+        return "";
+      default:
+        return url;
+    }
   }
 }
