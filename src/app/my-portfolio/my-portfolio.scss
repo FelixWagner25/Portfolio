@@ -2,7 +2,9 @@
 @use "../../styles/mixins.scss" as mixin;
 @use "../../styles/styles.scss" as styles;
 
+$project-img-width: 620px;
 $project-img-height: 393px;
+
 
 section{
     @include mixin.d-flex($flex-direction: column, $gap: 0px)
@@ -20,13 +22,58 @@ h1{
     @include mixin.d-flex($flex-direction: column, $gap: 80px);
 }
 
-.project-wrap{
-    > a{
-        > img{
-            width: 620px;
-            height: $project-img-height;
-        }
+.img-frame-onhover-uneven{
+    position: relative;
+    width: $project-img-width;
+    height: $project-img-height;
+    > img{
+        width: 100%;
+        height: 100%;
     }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        transition: border 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    &:hover::after{
+        border: 4px solid black;
+    }
+
+}
+
+.img-frame-onhover-even{
+    position: relative;
+    width: $project-img-width;
+    height: $project-img-height;
+    > img{
+        width: 100%;
+        height: 100%;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        transition: border 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    &:hover::after{
+        border: 4px solid black;
+    }
+
 }
 
 .uneven{
