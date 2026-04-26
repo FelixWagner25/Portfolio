@@ -59,6 +59,21 @@ h1{
         height: 100%;
     }
 
+    &::before{
+        content: url('../../assets/img/portfolio-arrow-white.svg');
+        background-color: black;
+        position: absolute;
+        z-index: 100;
+        left: -56px;
+        top: 50%;
+        height: 40px;
+        width: 40px;
+        padding: 16px;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
     &::after{
         content: "";
         position: absolute;
@@ -73,6 +88,10 @@ h1{
     }
 
     &:hover::after{
+        opacity: 100;
+    }
+
+    &:hover::before{
         opacity: 100;
     }
 
