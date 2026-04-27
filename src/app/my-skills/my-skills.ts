@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { LanguageService } from '../shared/services/language.service';
 import { AsyncPipe } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   standalone: true,
   selector: 'app-my-skills',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, RouterLink],
   templateUrl: './my-skills.html',
   styleUrl: './my-skills.scss',
 })
