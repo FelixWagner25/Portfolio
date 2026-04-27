@@ -141,7 +141,7 @@ h1{
     }
 
     &:hover .description-wrap.uneven{
-        left: calc($project-img-width + 80px);
+        left: calc($project-img-width + 100px);
     }
 }
 
@@ -150,6 +150,23 @@ h1{
     @include mixin.d-flex($justify-content: flex-end, $align-items: flex-start, $gap: 80px);
     position: relative;
     width: 100%;
+
+    &:hover .img-frame-onhover-even::after{
+        opacity: 100;
+    }
+
+    &:hover .img-frame-onhover-even::before{
+        opacity: 100;
+        rotate: 0deg;
+    }
+
+    &:hover .description-wrap{
+        opacity: 100;
+    }
+
+    &:hover .description-wrap.even{
+        right: calc($project-img-width + 100px);
+    }
 }
 
 aside{
@@ -178,6 +195,7 @@ aside{
 
 .uneven{
     position: absolute;
+    z-index: 101;
     left: 0;
     bottom: 0;
     transition: left 0.3s ease;
@@ -185,8 +203,10 @@ aside{
 
 .even{
     position: absolute;
+    z-index: 101;
     right: 0;
     bottom: 0;
+    transition: right 0.3s ease;
 }
 
 .title{
