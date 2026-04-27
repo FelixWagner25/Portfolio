@@ -48,6 +48,27 @@ h1{
         opacity: 100;
     }
 
+    &::before{
+    content: url('../../assets/img/portfolio-arrow-white.svg');
+        background-color: black;
+        position: absolute;
+        z-index: 100;
+        right: -56px;
+        top: calc(0.5 * $project-img-height - 20px );
+        height: 40px;
+        width: 40px;
+        padding: 16px;
+        border-radius: 50%;
+        opacity: 0;
+        rotate: 135deg;
+        transition: opacity 0.3s ease;
+        transition: rotate 0.5s ease 0.3s;
+    }
+    &:hover::before{
+        opacity: 100;
+        rotate: 270deg;
+    }
+
 }
 
 .img-frame-onhover-even{
