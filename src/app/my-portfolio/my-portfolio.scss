@@ -46,7 +46,7 @@ h1{
     }
 
     &:hover::after{
-        opacity: 100;
+        opacity: 1;
     }
 
     &::before{
@@ -66,7 +66,7 @@ h1{
         transition: rotate 0.5s ease 0.3s;
     }
     &:hover::before{
-        opacity: 100;
+        opacity: 1;
         rotate: 270deg;
     }
 
@@ -112,11 +112,11 @@ h1{
     }
 
     &:hover::after{
-        opacity: 100;
+        opacity: 1;
     }
 
     &:hover::before{
-        opacity: 100;
+        opacity: 1;
         rotate: 0deg;
     }
 
@@ -128,16 +128,16 @@ h1{
     width: 100%;
 
     &:hover .img-frame-onhover-uneven::after{
-        opacity: 100;
+        opacity: 1;
     }
 
     &:hover .img-frame-onhover-uneven::before{
-        opacity: 100;
+        opacity: 1;
         rotate: 270deg;
     }
 
     &:hover .description-wrap{
-        opacity: 100;
+        opacity: 1;
     }
 
     &:hover .description-wrap.uneven{
@@ -152,16 +152,16 @@ h1{
     width: 100%;
 
     &:hover .img-frame-onhover-even::after{
-        opacity: 100;
+        opacity: 1;
     }
 
     &:hover .img-frame-onhover-even::before{
-        opacity: 100;
+        opacity: 1;
         rotate: 0deg;
     }
 
     &:hover .description-wrap{
-        opacity: 100;
+        opacity: 1;
     }
 
     &:hover .description-wrap.even{
@@ -189,7 +189,7 @@ aside{
     transition: opacity 0.3 ease;
 
     &:hover{
-        opacity: 100;
+        opacity: 1;
     }
 }
 
