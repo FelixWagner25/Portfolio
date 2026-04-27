@@ -20,6 +20,7 @@ h1{
     padding: 100px 0px;
     width: 100%;
     @include mixin.d-flex($flex-direction: column, $gap: 80px);
+    position: relative;
 }
 
 .img-frame-onhover-uneven{
@@ -54,7 +55,7 @@ h1{
         position: absolute;
         z-index: 100;
         right: -56px;
-        top: calc(0.5 * $project-img-height - 20px );
+        top: calc(0.5 * $project-img-height - 20px);
         height: 40px;
         width: 40px;
         padding: 16px;
@@ -86,7 +87,7 @@ h1{
         position: absolute;
         z-index: 100;
         left: -52px;
-        top: calc(0.5 * $project-img-height - 20px );
+        top: calc(0.5 * $project-img-height - 20px);
         height: 40px;
         width: 40px;
         padding: 16px;
@@ -121,12 +122,16 @@ h1{
 
 }
 
-.uneven{
-    @include mixin.d-flex($justify-content: flex-start, $align-items: flex-start, $gap: 80px)
+.project-wrap-uneven{
+    @include mixin.d-flex($justify-content: flex-start, $align-items: flex-start, $gap: 80px);
+    position: relative;
+    width: 100%;
 }
 
-.even{
-    @include mixin.d-flex($justify-content: flex-end, $align-items: flex-start, $gap: 80px)
+.project-wrap-even{
+    @include mixin.d-flex($justify-content: flex-end, $align-items: flex-start, $gap: 80px);
+    position: relative;
+    width: 100%;
 }
 
 aside{
@@ -143,6 +148,25 @@ aside{
 
 .description-wrap{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-end, $gap:16px);
+    width: $project-img-width;
+    height: $project-img-height;
+}
+
+.uneven{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: left 0.3s ease;
+}
+
+.uneven:hover{
+    left: calc($project-img-width + 80px);
+}
+
+.even{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .title{
