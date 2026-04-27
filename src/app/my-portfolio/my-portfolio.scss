@@ -64,14 +64,16 @@ h1{
         background-color: black;
         position: absolute;
         z-index: 100;
-        left: -56px;
-        top: 50%;
+        left: -52px;
+        top: calc(0.5 * $project-img-height - 20px );
         height: 40px;
         width: 40px;
         padding: 16px;
         border-radius: 50%;
         opacity: 0;
+        rotate: 135deg;
         transition: opacity 0.3s ease;
+        transition: rotate 0.5s ease 0.3s;
     }
 
     &::after{
@@ -93,6 +95,7 @@ h1{
 
     &:hover::before{
         opacity: 100;
+        rotate: 0deg;
     }
 
 }
