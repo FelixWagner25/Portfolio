@@ -20,11 +20,11 @@ export class Header {
   private router = inject(Router);
   private returnUrl: string = "";
 
-  private menuService = inject(MenuService);
+  public menuService = inject(MenuService);
 
   public menuBtnSrc = menuBtnImages[0];
 
-  constructor(private cdr: ChangeDetectorRef){}
+ constructor(private cdr: ChangeDetectorRef){}
 
   setLanguage(language: AppLanguage){
     this.languageService.setLanguage(language);

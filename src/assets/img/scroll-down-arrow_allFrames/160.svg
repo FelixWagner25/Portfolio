@@ -6,7 +6,7 @@
    fill="none"
    version="1.1"
    id="svg2"
-   sodipodi:docname="variant_0.svg"
+   sodipodi:docname="160.svg"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -33,13 +33,13 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <path
-     d="M33 145.105L58 170.105L83 145.105"
-     stroke="black"
+     d="m 33,137.1045 25,25 25,-25"
+     stroke="#000000"
      stroke-width="4"
      id="path1" />
   <path
-     d="M58 78V170.105"
-     stroke="black"
+     d="m 58,70 v 92.1053"
+     stroke="#000000"
      stroke-width="4"
      id="path2" />
 </svg>
