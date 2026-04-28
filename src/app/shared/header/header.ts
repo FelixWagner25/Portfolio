@@ -44,6 +44,7 @@ export class Header {
 
   closeMenu(){
     this.menuService.setShowMenu(false);
+    this.animateCloseMenuBtn();
   }
 
   mapReturnUrl(url: string): string {
@@ -78,7 +79,7 @@ export class Header {
         index = index + 1;
       }
       this.cdr.detectChanges();
-    }, 200);
+    }, 100);
   }
 
   animateCloseMenuBtn(){
@@ -92,9 +93,8 @@ export class Header {
         index = index - 1;
       }
       this.cdr.detectChanges();
-    }, 200);
+    }, 100);
   }
-
 
   returnMenuBtnSrc(){
     return this.menuBtnSrc;
