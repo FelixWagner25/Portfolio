@@ -58,9 +58,13 @@ export class Header {
   animateMenuBtn(){
     let index = 0;
     let animationInterval = setInterval(() => {
-      if(index >= menuBtnImages.length) clearInterval(animationInterval);
-      this.menuBtnSrc = menuBtnImages[index];
-      index = index + 1;
+      if(index >= menuBtnImages.length){
+        clearInterval(animationInterval);
+      }
+      else {
+        this.menuBtnSrc = menuBtnImages[index];
+        index = index + 1;
+      }
       this.cdr.detectChanges();
     }, 500);
   }

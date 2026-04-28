@@ -12,9 +12,7 @@ export const menuBtnImages = [
     "assets/img/header-menu-btn/variant_2.svg",
     "assets/img/header-menu-btn/variant_3.svg",
     "assets/img/header-menu-btn/variant_4.svg",
-    "assets/img/header-menu-btn/variant_6.svg",
-    "assets/img/header-menu-btn/variant_7.svg",
-    "assets/img/header-menu-btn/variant_8.svg",
+    "assets/img/header-menu-btn/variant_5.svg",
 ];
 
 export const nextSectionArrowLeft = [
