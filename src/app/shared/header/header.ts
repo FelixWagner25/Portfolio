@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { AppLanguage, LanguageService } from '../services/language.service';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink } from "@angular/router";
 import { Router } from '@angular/router';
 import { MenuService } from '../services/menu.service';
+import { menuBtnImages } from '../constants/image-srcs';
 
 @Component({
   standalone: true,
@@ -21,12 +22,17 @@ export class Header {
 
   private menuService = inject(MenuService);
 
+  public menuBtnSrc = menuBtnImages[0];
+
+  constructor(private cdr: ChangeDetectorRef){}
+
   setLanguage(language: AppLanguage){
     this.languageService.setLanguage(language);
   }
 
   toggleMenu(){
     this.menuService.toggleShowMenu();
+    this.animateMenuBtn();
     if (this.menuService.getShowMenuStatus()) {
       this.returnUrl = this.mapReturnUrl(this.router.url)
       this.router.navigate(['/menu']);
@@ -47,5 +53,19 @@ export class Header {
       default:
         return "";
     }
+  }
+
+  animateMenuBtn(){
+    let index = 0;
+    let animationInterval = setInterval(() => {
+      if(index >= menuBtnImages.length) clearInterval(animationInterval);
+      this.menuBtnSrc = menuBtnImages[index];
+      index = index + 1;
+      this.cdr.detectChanges();
+    }, 500);
+  }
+
+  returnMenuBtnSrc(){
+    return this.menuBtnSrc;
   }
 }

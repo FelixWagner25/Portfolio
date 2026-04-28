@@ -31,7 +31,7 @@ export class LandingPage {
       this.arrowImg = scrollDownArrowImages[this.index];
       this.index += 1;
       this.cdr.detectChanges();
-    }, 700);
+    }, 800);
   }
 
    constructArrowBackgroundUrl(){
