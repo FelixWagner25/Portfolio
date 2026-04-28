@@ -69,7 +69,7 @@ export class Header {
   }
 
   animateOpenMenuBtn(){
-    let index = 0;
+    let index = 1;
     let animationInterval = setInterval(() => {
       if(index >= menuBtnImages.length){
         clearInterval(animationInterval);
@@ -83,7 +83,7 @@ export class Header {
   }
 
   animateCloseMenuBtn(){
-    let index = menuBtnImages.length - 1;
+    let index = menuBtnImages.length - 2;
     let animationInterval = setInterval(() => {
       if(index < 0){
         clearInterval(animationInterval);
