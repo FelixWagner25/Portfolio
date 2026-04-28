@@ -56,6 +56,18 @@ export class Header {
   }
 
   animateMenuBtn(){
+    let url = this.router.url;
+    switch (url) {
+      case "/menu":
+        this.animateCloseMenuBtn();
+        break;
+      default:
+        this.animateOpenMenuBtn();
+        break;
+    }
+  }
+
+  animateOpenMenuBtn(){
     let index = 0;
     let animationInterval = setInterval(() => {
       if(index >= menuBtnImages.length){
@@ -66,8 +78,23 @@ export class Header {
         index = index + 1;
       }
       this.cdr.detectChanges();
-    }, 500);
+    }, 200);
   }
+
+  animateCloseMenuBtn(){
+    let index = menuBtnImages.length - 1;
+    let animationInterval = setInterval(() => {
+      if(index < 0){
+        clearInterval(animationInterval);
+      }
+      else {
+        this.menuBtnSrc = menuBtnImages[index];
+        index = index - 1;
+      }
+      this.cdr.detectChanges();
+    }, 200);
+  }
+
 
   returnMenuBtnSrc(){
     return this.menuBtnSrc;
