@@ -1,11 +1,11 @@
 export const scrollDownArrowImages = [
-    "none",
-    "url('assets/img/scroll-down-arrow/variant_2.svg')",
-    "url('assets/img/scroll-down-arrow/variant_3.svg')",
-    "url('assets/img/scroll-down-arrow/variant_4.svg')",
-    "url('assets/img/scroll-down-arrow/variant_5.svg')",
-    "url('assets/img/scroll-down-arrow/variant_6.svg')",
-    "none",
+    'none',
+    'assets/img/scroll-down-arrow/variant_2.svg',
+    'assets/img/scroll-down-arrow/variant_3.svg',
+    'assets/img/scroll-down-arrow/variant_4.svg',
+    'assets/img/scroll-down-arrow/variant_5.svg',
+    'assets/img/scroll-down-arrow/variant_6.svg',
+    'none',
 ];
 
 export const menuBtnImages = [

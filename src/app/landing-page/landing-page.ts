@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { scrollDownArrowImages } from '../shared/constants/image-srcs';
 
@@ -13,10 +13,10 @@ export class LandingPage {
   private animationInterval?: ReturnType<typeof setInterval>;
   public arrowImg = scrollDownArrowImages[this.index];
 
+  constructor(private cdr: ChangeDetectorRef){}
+
   ngOnInit(){
     this.animateScrollDownArrow();
-    console.log("ng-init läuft");
-    
   }
 
   ngOnDestroy(){
@@ -30,6 +30,11 @@ export class LandingPage {
       this.index = this.index % scrollDownArrowImages.length;
       this.arrowImg = scrollDownArrowImages[this.index];
       this.index += 1;
+      this.cdr.detectChanges();
     }, 500);
+  }
+
+   constructArrowBackgroundUrl(){
+    return this.arrowImg === 'none' ? 'none': `url(${this.arrowImg})`
   }
 }
