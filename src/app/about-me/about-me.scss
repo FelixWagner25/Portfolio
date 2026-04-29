@@ -66,8 +66,16 @@ p{
     width: 100%;
     @include mixin.d-flex($justify-content: flex-end, $align-items: flex-start);
     padding: 32px 32px;
-    > img{
-        height: 300px;
-        width: 1239px;
+}
+
+.next-section-arrow-left{
+    height: 216px;
+    width: 116px;
+    transform: rotate(45deg) translate(0,0) scale(1);
+    transition: transform 0.25s ease-out;
+    
+    &:hover{
+        transform: rotate(45deg) translate(0, 108px) scale(1.1);
     }
+
 }
