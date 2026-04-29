@@ -15,14 +15,15 @@ import { AsyncPipe } from '@angular/common';
 })
 export class Menu {
   private menuService = inject(MenuService);
+
   private languageService = inject(LanguageService);
   language$ = this.languageService.language$;
 
   readonly texts$ = this.language$.pipe(map((language) => language === 'de' ? germanTexts: englishTexts));
 
-
   closeMenu(){
     this.menuService.setShowMenu(false);
+    this.menuService.animateCloseMenuBtn();
   }
 }
 

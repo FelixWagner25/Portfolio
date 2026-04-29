@@ -14,7 +14,7 @@
           </button>
         </div>
         <a (click)="toggleMenu()">
-          <img [src]="returnMenuBtnSrc()" alt="Menu" />
+          <img [src]="menuService.menuBtnSrc$ | async" alt="Menu" />
         </a>
       </div>
     </section>

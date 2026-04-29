@@ -22,29 +22,24 @@ export class Header {
 
   public menuService = inject(MenuService);
 
-  public menuBtnSrc = menuBtnImages[0];
-
- constructor(private cdr: ChangeDetectorRef){}
-
   setLanguage(language: AppLanguage){
     this.languageService.setLanguage(language);
   }
 
   toggleMenu(){
     this.menuService.toggleShowMenu();
-    this.animateMenuBtn();
+    this.menuService.animateMenuBtn();
     if (this.menuService.getShowMenuStatus()) {
       this.returnUrl = this.mapReturnUrl(this.router.url)
       this.router.navigate(['/menu']);
     } else {
       this.router.navigate([this.returnUrl]);
     }
-    console.log(this.returnUrl);
   }
 
   closeMenu(){
     this.menuService.setShowMenu(false);
-    this.animateCloseMenuBtn();
+    this.menuService.animateCloseMenuBtn();
   }
 
   mapReturnUrl(url: string): string {
@@ -54,49 +49,5 @@ export class Header {
       default:
         return "";
     }
-  }
-
-  animateMenuBtn(){
-    let url = this.router.url;
-    switch (url) {
-      case "/menu":
-        this.animateCloseMenuBtn();
-        break;
-      default:
-        this.animateOpenMenuBtn();
-        break;
-    }
-  }
-
-  animateOpenMenuBtn(){
-    let index = 1;
-    let animationInterval = setInterval(() => {
-      if(index >= menuBtnImages.length){
-        clearInterval(animationInterval);
-      }
-      else {
-        this.menuBtnSrc = menuBtnImages[index];
-        index = index + 1;
-      }
-      this.cdr.detectChanges();
-    }, 100);
-  }
-
-  animateCloseMenuBtn(){
-    let index = menuBtnImages.length - 2;
-    let animationInterval = setInterval(() => {
-      if(index < 0){
-        clearInterval(animationInterval);
-      }
-      else {
-        this.menuBtnSrc = menuBtnImages[index];
-        index = index - 1;
-      }
-      this.cdr.detectChanges();
-    }, 100);
-  }
-
-  returnMenuBtnSrc(){
-    return this.menuBtnSrc;
   }
 }
