@@ -11,6 +11,7 @@ section{
         border: 4px solid black;
         @include mixin.d-flex($flex-direction: column, $gap: 72px);
     }
+    padding: 0 16px;
 }
 
 h1{
@@ -20,7 +21,9 @@ h1{
 }
 
 .skills-content{
-    @include mixin.d-flex($gap:128px)
+    @include mixin.d-flex($gap:128px);
+    flex-wrap: wrap;
+    gap: 32px 128px;
 }
 
 .skill-icon-wrap{
@@ -49,5 +52,33 @@ h1{
         &:hover{
             transform: rotate(-360deg) scale(1.25);
         }
+    }
+}
+
+@media(max-width:540px){
+    section{
+        > div{
+            padding-top: 64px;
+            padding-right: 32px;
+            padding-left: 32px;
+        }
+    }
+
+    .skills-content{
+        gap: 32px 64px;
+    }
+
+    .continue-skills{
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 400px){
+    .skills-content{
+        gap: 32px 32px;
+    }
+
+    .continue-skills{
+        font-size: 16px;
     }
 }
