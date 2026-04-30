@@ -5,6 +5,7 @@ section{
     @include mixin.d-flex($justify-content: space-between);
     height: 92px;
     background-color: styles.$background-color;
+    padding: 0 16px;
 }
 
 .bg-color{
@@ -17,11 +18,14 @@ section{
     z-index: 1000;
 }
 
-a{
-    > img{
-        width: 67px;
-        height: 30px;
-    }
+.logo-img{
+    width: 67px;
+    height: 30px;
+}
+
+.menu-btn-img{
+    width: 32px;
+    height: 40px;
 }
 
 button{
@@ -57,4 +61,10 @@ button{
 
 .menu-closed{
     display: none;
+}
+
+@media (max-width: 500px) {
+    .menu-lang-wrap{
+        gap: 16px;
+    }
 }

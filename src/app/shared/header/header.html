@@ -2,7 +2,11 @@
   <div class="max-width-1440px">
     <section>
       <a routerLink="" (click)="closeMenu()">
-        <img src="assets/img/initials_brackets_black_transparent.png" alt="Back home" />
+        <img
+          src="assets/img/initials_brackets_black_transparent.png"
+          class="logo-img"
+          alt="Back home"
+        />
       </a>
       <div class="menu-lang-wrap">
         <div class="lang-wrap">
@@ -14,7 +18,7 @@
           </button>
         </div>
         <a (click)="toggleMenu()">
-          <img [src]="menuService.menuBtnSrc$ | async" alt="Menu" />
+          <img [src]="menuService.menuBtnSrc$ | async" alt="Menu" class="menu-btn-img" />
         </a>
       </div>
     </section>
