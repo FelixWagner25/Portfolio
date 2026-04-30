@@ -23,3 +23,51 @@
             cursor: pointer;
         }
 }
+
+.next-section-link-left{
+    height: 300px;
+    width: 100%;
+    @include mixin.d-flex($justify-content: flex-end, $align-items: flex-start);
+    padding: 32px 64px;
+}
+
+.next-section-arrow-left{
+    height: 216px;
+    width: 116px;
+    transform: rotate(45deg) translate(0,0) scale(1);
+    transition: transform 0.25s ease-out;
+    &:hover{
+        transform: rotate(45deg) translate(0, 108px) scale(1.1);
+    }
+
+}
+
+.next-section-link-right{
+    height: 300px;
+    width: 100%;
+    @include mixin.d-flex($justify-content: flex-start, $align-items: flex-start);
+    padding: 32px 32px;
+}
+
+.next-section-arrow-right{
+    height: 216px;
+    width: 116px;
+    transform: rotate(-45deg) translate(0,0) scale(1);
+    transition: transform 0.25s ease-out;
+    
+    &:hover{
+        transform: rotate(-45deg) translate(0, 108px) scale(1.1);
+    }
+}
+
+@media (max-width:1440px){
+    .h1-main{
+        font-size: 64px;
+    }
+}
+
+@media (max-width:1100px){
+    .h1-main{
+        font-size: 60px;
+    }
+}
