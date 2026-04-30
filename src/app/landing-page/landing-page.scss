@@ -87,3 +87,96 @@ section{
         width: min(100%, 520px);
     }
 }
+
+@media (max-width: 950px) {
+    section{
+        padding: 0 64px;
+    }
+}
+
+@media (max-width: 900px){
+    .title-wrap > b{
+        font-size: 72px;
+    }
+
+    .title-wrap > div > span{
+        font-size: 24px;
+    }
+
+    .hl{    
+        width: min(100%, 410px);
+    }
+}
+
+@media (max-width: 720px){
+    section{
+        padding: 0 32px;
+    }
+
+    .title-wrap > b{
+        font-size: 60px;
+    }
+
+    .title-wrap > div > span{
+        font-size: 24px;
+    }
+
+    .hl{    
+        width: min(100%, 320px);
+    } 
+
+    .email-scroll-wrap{
+        font-size: 16px;
+        min-height: auto;
+    }
+
+    .arrow-wrap{
+        width: 40px;
+    }
+
+}
+
+@media (max-width: 560px){
+    section{
+        padding: 0 16px;
+    }
+    .title-wrap > b{
+        font-size: 45px;
+    }
+
+    .title-wrap > div > span{
+        font-size: 23px;
+    }
+
+    .hl{    
+        width: min(100%, 200px);
+    } 
+}
+
+@media (max-width: 400px){
+    .title-wrap > b{
+        font-size: 32px;
+    }
+
+    .title-wrap > div > span{
+        font-size: 16px;
+    }
+
+    .hl{    
+        width: min(100%, 150px);
+    } 
+}
+
+@media (max-height: 700px){
+    .title-wrap{
+        padding-top: 0;
+    }
+
+    .email-scroll-wrap{
+        min-height: auto;
+    }
+    
+    section{
+        gap: 24px;
+    }
+}
