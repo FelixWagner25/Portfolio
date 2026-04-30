@@ -71,3 +71,21 @@
         font-size: 60px;
     }
 }
+
+@media(max-width:800px){
+    .h1-main{
+        font-size: 48px;
+    }
+}
+
+@media(max-width:440px){
+    .h1-main{
+        font-size: 36px;
+    }
+}
+
+@media(max-width:340px){
+    .h1-main{
+        font-size: 32px;
+    }
+}

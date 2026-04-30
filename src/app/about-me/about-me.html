@@ -1,10 +1,14 @@
 <div class="center-content">
   <div class="max-width-1440px">
     @if ((language$ | async) === 'en') {
-      <h1 class="h1-main pd-lr-16px">About me</h1>
+      <div class="mobile-center">
+        <h1 class="h1-main pd-lr-16px">About me</h1>
+      </div>
     }
     @if ((language$ | async) === 'de') {
-      <h1 class="h1-main pd-lr-16px">Über mich</h1>
+      <div class="mobile-center">
+        <h1 class="h1-main pd-lr-16px">Über mich</h1>
+      </div>
     }
     <section>
       <div class="description">
