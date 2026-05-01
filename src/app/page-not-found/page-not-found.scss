@@ -4,3 +4,9 @@ section{
     height: calc(100vh - 390px);
     @include mixin.font("Overpass", 400, 20px);
 }
+
+@media(max-width: 1440px){
+    section{
+        height: calc(100vh - 290px);
+    }
+}

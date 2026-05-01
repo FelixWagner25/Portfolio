@@ -13,3 +13,8 @@ h2{
     color: styles.$highlight-color;
 }
 
+@media(max-width: 1440px){
+    section{
+        height: calc(100vh - 290px);
+    }
+}

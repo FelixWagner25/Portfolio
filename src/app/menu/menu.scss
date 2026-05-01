@@ -53,6 +53,7 @@ section{
 @media(max-width: 1440px){
     section{
         font-size: 80px;
+        height: calc(100vh - 290px);
     }
 
     .menu-lnk{
