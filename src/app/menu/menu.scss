@@ -8,14 +8,16 @@ section{
     @include mixin.d-flex($flex-direction: column, $gap:35px);
     @include mixin.font("Syne", 700, 96px);
     height: calc(100vh - 390px);
-    > a {
-        color: black;
-        @include mixin.d-flex();
-        width: $link-width;
-        padding-bottom: 8px;
-        position: relative;
-    }
-    > a::before {
+}
+
+.menu-lnk{
+    width: $link-width;
+    color: black;
+    @include mixin.d-flex();
+    padding-bottom: 8px;
+    position: relative;
+    
+    &::before {
         content: "";
         position: absolute;
         left: 0;
@@ -24,7 +26,7 @@ section{
         border-bottom: 4px solid black;
     }
 
-    > a::after {
+    &::after {
         content: "";
         position: absolute;
         left: 0;
@@ -33,7 +35,7 @@ section{
         border-left: 4px solid black;
     }
 
-    > a:hover::before {
+    &:hover::before {
         width: 208px;
         right: 0;
         left: calc($link-width - 208px);
@@ -42,9 +44,76 @@ section{
         transition-delay: 0.3s;;    
     }
 
-    > a:hover::after {
+    &:hover::after {
         height: 0;
         transition: 0.3s ease;
     }
+}
 
+@media(max-width: 1440px){
+    section{
+        font-size: 80px;
+    }
+
+    .menu-lnk{
+        width: 560px;
+        
+        &:hover::before {
+            width: 160px;
+            left: calc(560px - 160px);
+        }
+    }
+}
+
+@media(max-width: 1024px){
+    section{
+        font-size: 60px;
+    }
+
+    .menu-lnk{
+        width: 440px;
+        
+        &:hover::before {
+            width: 100px;
+            left: calc(440px - 100px);
+        }
+    }
+}
+
+@media(max-width: 600px){
+    section{
+        font-size: 48px;
+    }
+
+    .menu-lnk{
+        width: 330px;
+        
+        &:hover::before {
+            width: 64px;
+            left: calc(330px - 64px);
+        }
+    
+        &::after{
+            height: 40px;
+        }
+    }
+}
+
+@media(max-width: 400px){
+    section{
+        font-size: 40px;
+    }
+
+    .menu-lnk{
+        width: 280px;
+        
+        &:hover::before {
+            width: 64px;
+            left: calc(280px - 64px);
+        }
+    
+        &::after{
+            height: 40px;
+        }
+    }
 }
