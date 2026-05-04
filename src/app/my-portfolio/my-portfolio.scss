@@ -293,5 +293,58 @@ aside{
 }
 
 @media (max-width: 1080px) {
-  
+  .aside-uneven{
+    justify-content: flex-start;
+    align-items: center;
+    width: 400px;
+   }
+
+  .aside-even{
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+
+  .project-wrap-uneven{
+    flex-direction: column;
+    align-items: center;
+
+    &:hover .description-wrap.uneven{
+        top: calc(254px + 100px);
+        left: auto;
+    }
+  }
+
+  .project-wrap-even{
+    flex-direction: column;
+    align-items: center;
+
+    &:hover .description-wrap.even{
+        top: calc(254px + 100px);
+        right: auto;
+    }
+  }
+
+  .description-wrap{
+    width: 400px;
+  }
+
+  .uneven{
+    position: absolute;
+    z-index: 101;
+    left: auto;
+    top: 0;
+    bottom: auto;
+    transition: top 0.3s ease;
+  }
+
+  .even{
+    position: absolute;
+    z-index: 101;
+    right: auto;
+    top: 0;
+    bottom: auto;
+    transition: top 0.3s ease;
+  }
+
 }
