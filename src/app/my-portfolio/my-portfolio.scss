@@ -293,10 +293,14 @@ aside{
 }
 
 @media (max-width: 1080px) {
+  .portfolio-wrap{
+    padding-top: 164px;
+    gap: 120px
+  }
+
   .aside-uneven{
     justify-content: flex-start;
     align-items: center;
-    width: 400px;
    }
 
   .aside-even{
@@ -310,17 +314,17 @@ aside{
     align-items: center;
 
     &:hover .description-wrap.uneven{
-        top: calc(254px + 100px);
+        top: calc(254px + 40px);
         left: auto;
     }
   }
 
   .project-wrap-even{
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
 
     &:hover .description-wrap.even{
-        top: calc(254px + 100px);
+        top: calc(254px + 40px);
         right: auto;
     }
   }
@@ -330,8 +334,6 @@ aside{
   }
 
   .uneven{
-    position: absolute;
-    z-index: 101;
     left: auto;
     top: 0;
     bottom: auto;
@@ -339,12 +341,15 @@ aside{
   }
 
   .even{
-    position: absolute;
-    z-index: 101;
     right: auto;
     top: 0;
     bottom: auto;
     transition: top 0.3s ease;
   }
 
+  .number{
+    position: absolute;
+    right: calc(50vw - ((100vw - 100%)/2) - 37px);
+    top: -64px;
+  }
 }
