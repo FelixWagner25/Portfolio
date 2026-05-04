@@ -185,7 +185,6 @@ aside{
 .description-wrap{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-end, $gap:16px);
     width: $project-img-width;
-    //height: $project-img-height;
     opacity: 0;
     transition: opacity 0.3 ease;
 
@@ -352,4 +351,75 @@ aside{
     right: calc(50vw - ((100vw - 100%)/2) - 37px);
     top: -64px;
   }
+}
+
+@media (max-width:600px) {
+    .img-frame-onhover-even{
+        width: 316px;
+        height: 200px;
+        &::before{
+            top: auto;
+            left: -40px;
+            bottom: -40px;
+            right: auto;
+        }
+    }
+
+    .img-frame-onhover-uneven{
+        width: 316px;
+        height: 200px;
+        &::before{
+            top: auto;
+            right: -40px;
+            bottom: -40px;
+            left: auto;
+        }
+    } 
+    
+    .description-wrap{
+        width: 316px;
+  }
+
+  .title{
+    font-size: 32px;
+  }
+
+  .subtitle{
+    font-size: 18px;
+  }
+
+  .project-wrap-uneven{
+    &:hover .description-wrap.uneven{
+        top: calc(200px + 40px);
+        left: auto;
+    }
+  }
+
+  .project-wrap-even{
+    &:hover .description-wrap.even{
+        top: calc(200px + 40px);
+        right: auto;
+    }
+  }
+}
+
+@media(max-width: 480px){
+    .portfolio-wrap{
+        gap: 216px;
+        padding-bottom: 64px;
+    }
+
+    .img-frame-onhover-even{
+        width: 200px;
+        height: 164px;
+    }
+
+    .img-frame-onhover-uneven{
+        width: 200px;
+        height: 164px;
+    } 
+    
+    .description-wrap{
+        width: 200px;
+    }
 }
