@@ -3,6 +3,7 @@
 @use "../../styles/styles.scss" as styles;
 
 section{
+    padding: 0 16px;
     > div{
         padding-top: 56px;
         @include mixin.d-flex($flex-direction: column);
@@ -64,5 +65,49 @@ mat-form-field{
         // Hover effect to stop transition property of btn-main
         padding: 20px 60px;
         font-weight: 400;
+    }
+}
+
+@media (max-width:1440px){
+    h1{
+        font-size: 64px;
+    }
+}
+
+@media (max-width:1100px){
+    h1{
+        font-size: 60px;
+    }
+}
+
+@media(max-width:800px){
+    h1{
+        font-size: 48px;
+    }
+
+    .subtitle{
+        font-size: 24px;
+    }
+}
+
+@media(max-width:700px){
+    mat-form-field{
+    width: 100%;
+}
+}
+
+@media(max-width:440px){
+    h1{
+        font-size: 36px;
+    }
+
+    .subtitle{
+        font-size: 20px;
+    }
+}
+
+@media(max-width:340px){
+    h1{
+        font-size: 32px;
     }
 }

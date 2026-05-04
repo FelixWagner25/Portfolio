@@ -6,6 +6,11 @@ section{
     color: #FFFCF3;
 }
 
+.pd-lr-16px{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
 .footer-wrap{
     @include mixin.d-flex($justify-content: space-between);
     padding-bottom: 16px;
