@@ -118,3 +118,9 @@ section{
         }
     }
 }
+
+@media(max-height: 520px) {
+    section{
+        margin-top: 36px;
+    }
+}
