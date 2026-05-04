@@ -7,7 +7,8 @@ $project-img-height: 393px;
 
 
 section{
-    @include mixin.d-flex($flex-direction: column, $gap: 0px)
+    @include mixin.d-flex($flex-direction: column, $gap: 0px);
+    padding: 0 16px;
 }
 
 h1{
@@ -184,7 +185,7 @@ aside{
 .description-wrap{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $justify-content: flex-end, $gap:16px);
     width: $project-img-width;
-    height: $project-img-height;
+    //height: $project-img-height;
     opacity: 0;
     transition: opacity 0.3 ease;
 
@@ -224,4 +225,73 @@ aside{
 
 .number{
     @include mixin.font("Syne", 700, 48px);
+}
+
+@media(max-width: 1440px) {
+    .portfolio-wrap{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .img-frame-onhover-even{
+        width: 400px;
+        height: 254px;
+    }
+
+    .img-frame-onhover-uneven{
+        width: 400px;
+        height: 254px;
+    }
+
+    aside{
+        height: 254px;
+    }
+
+    .description-wrap{
+        width: 400px;
+    }
+
+    .project-wrap-even{
+        gap: 40px;
+    }
+
+    .project-wrap-uneven{
+        gap: 40px;
+
+        &:hover .description-wrap.uneven{
+          left: calc(400px + 200px);
+        }
+    }
+
+    .project-wrap-even{
+        gap: 40px;
+
+        &:hover .description-wrap.even{
+            right: calc(400px + 200px);
+        }
+    }
+
+}
+
+@media(max-width: 1260px){
+    .portfolio-wrap{
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .project-wrap-uneven{
+        &:hover .description-wrap.uneven{
+            left: calc(400px + 160px);
+    }
+    }
+
+    .project-wrap-even{
+        &:hover .description-wrap.even{
+            right: calc(400px + 160px);
+    }
+    }    
+}
+
+@media (max-width: 1080px) {
+  
 }
