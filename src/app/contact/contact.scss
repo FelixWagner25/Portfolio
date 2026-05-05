@@ -85,6 +85,7 @@ mat-form-field{
     padding: 16px 24px;
     border-radius: 16px;
     font-size: 24px;
+    animation: message-slide-in 250ms ease-out;
 }
 
 .message-error{
@@ -96,6 +97,19 @@ mat-form-field{
     padding: 16px 24px;
     border-radius: 16px;
     font-size: 24px;
+    animation: message-slide-in 250ms ease-out;
+}
+
+
+@keyframes message-slide-in {
+    0%{
+        opacity: 0;
+        transform: translateY(16px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width:1440px){
