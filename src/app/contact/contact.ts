@@ -32,7 +32,7 @@ export class Contact {
   readonly texts = toSignal(this.texts$, {initialValue: englishTexts});
 
   readonly name = new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(512)]);
-  readonly email = new FormControl('', [Validators.required, Validators.email]);
+  readonly email = new FormControl('', [Validators.required, Validators.email, Validators.pattern(/^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/),]);
   readonly message = new FormControl('', [Validators.required, Validators.minLength(16), Validators.maxLength(4096)]);
   readonly checkbox = new FormControl(false, Validators.requiredTrue);
 
@@ -137,7 +137,7 @@ export class Contact {
   processEmailErrorMessageUpdate(){
     if (this.email.hasError('required')){
       this.emailErrorMessage.set(this.texts().emailRequiredError);
-    } else if (this.email.hasError('email')){
+    } else if (this.email.hasError('email') || this.email.hasError('pattern')){
       this.emailErrorMessage.set(this.texts().emailPatternError);
     } else{
       this.emailErrorMessage.set('');
