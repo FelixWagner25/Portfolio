@@ -63,6 +63,7 @@ export class Contact {
   submitForm(formDirective: FormGroupDirective){
     if(this.contactFormInput.invalid){
       this.contactFormInput.markAllAsTouched();
+      this.updateAllErrorMessages();
       return;
     }
 
@@ -160,6 +161,12 @@ export class Contact {
     };
   }
 
+  updateAllErrorMessages(){
+    this.updateErrorMessage("name");
+    this.updateErrorMessage("email");
+    this.updateErrorMessage("message");
+    this.updateErrorMessage("checkbox");
+  }
 }
 
 export interface ContactTexts {

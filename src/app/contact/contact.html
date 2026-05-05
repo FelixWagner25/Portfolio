@@ -65,12 +65,10 @@
             <mat-error>{{ checkboxErrorMessage() }}</mat-error>
           }
         </mat-checkbox>
-
         <input
           class="btn-main btn-contact"
           type="submit"
           value="{{ texts.submit }}"
-          [disabled]="contactFormInput.invalid"
           [class.disabled]="contactFormInput.invalid"
         />
         @if (sendMailSuccess()) {
