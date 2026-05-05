@@ -57,6 +57,10 @@ section{
     animation: scrollDownArrow 3s ease infinite;
 }
 
+.scroll-down-wrap{
+    @include mixin.d-flex($flex-direction: column, $gap: 0px);
+}
+
 @keyframes scrollDownArrow {
     0% {
         transform: translateY(-50px);
