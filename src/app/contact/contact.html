@@ -71,12 +71,15 @@
           value="{{ texts.submit }}"
           [class.disabled]="contactFormInput.invalid"
         />
-        @if (sendMailSuccess()) {
-          <p>{{ texts.mailSentSuccess }}</p>
-        } @else {
-          <p>{{ sendMailError() }}</p>
-        }
       </form>
+    </div>
+
+    <div class="message-send-response">
+      @if (sendMailSuccess()) {
+        <p class="message-success">{{ texts.mailSentSuccess }}</p>
+      } @else if (sendMailError() !== '') {
+        <p class="message-error">{{ sendMailError() }}</p>
+      }
     </div>
   }
 </section>

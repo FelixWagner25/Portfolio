@@ -91,13 +91,16 @@ export class Contact {
             message: '',
             checkbox: false
           });
+          this.resetSuccessMessage();
          } else {
             this.sendMailError.set(response.error ?? 'Unknown error on sending message');
+            this.resetErrorMessage();
           }
         },
         error: (error) => {
           this.isSendingMail.set(false);
           this.sendMailError.set(error?.error?.error ?? 'Server error');
+          this.resetErrorMessage();
         }
       });
     }
@@ -166,6 +169,18 @@ export class Contact {
     this.updateErrorMessage("email");
     this.updateErrorMessage("message");
     this.updateErrorMessage("checkbox");
+  }
+
+  resetSuccessMessage(){
+    setTimeout(() => {
+      this.sendMailSuccess.set(false);
+    }, 3000);
+  }
+
+  resetErrorMessage(){
+    setTimeout(() => {
+      this.sendMailError.set('');
+    }, 9000);
   }
 }
 
