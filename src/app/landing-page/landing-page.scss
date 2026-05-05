@@ -46,6 +46,9 @@ section{
 
 .arrow-wrap{
     width: 56px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .arrow{
