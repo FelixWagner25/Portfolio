@@ -27,3 +27,27 @@ h3{
     @include mixin.font("Overpass", 800, 24px);
     color: styles.$highlight-color;
 }
+
+@media(max-width: 600px){
+    .h1-main{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 28px;
+    }
+}
+
+@media(max-width: 440px){
+    .h1-main{
+        font-size: 24px;
+    }
+
+    h2{
+        font-size: 24px;
+    }
+
+    h3{
+        font-size: 20px;
+    }
+
+}
