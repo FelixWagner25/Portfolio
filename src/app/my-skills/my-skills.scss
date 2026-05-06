@@ -1,6 +1,6 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as styles;
+@use "../../styles/constants.scss" as const;
 
 section{
     @include mixin.d-flex($flex-direction: column, $gap: 0px);
@@ -16,7 +16,7 @@ section{
 
 h1{
     transform: translateY(50%);
-    background-color: styles.$background-color;
+    background-color: const.$background-color;
     padding: 0 16px;
 }
 

@@ -1,6 +1,6 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as styles;
+@use "../../styles/constants.scss" as const;
 
 $project-img-width: 620px;
 $project-img-height: 393px;
@@ -13,7 +13,7 @@ section{
 
 h1{
     transform: translateY(50%);
-    background-color: styles.$background-color;
+    background-color: const.$background-color;
     padding: 0 16px;
 }
 
@@ -215,7 +215,7 @@ aside{
 
 .subtitle{
     @include mixin.font("Overpass", 400, 23px);
-    color: styles.$highlight-color;
+    color: const.$highlight-color;
 }
 
 .description{

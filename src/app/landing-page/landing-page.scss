@@ -1,5 +1,5 @@
 @use '../../styles/mixins.scss' as mixin;
-@use '../../styles/styles.scss' as styles;
+@use '../../styles/constants.scss' as const;
 
 section{
     height: calc(100vh - 92px);
@@ -20,7 +20,7 @@ section{
         width: 100%;
         > span{
             @include mixin.font("Overpass", 700, 48px, 100%, -2.5%);
-            color: styles.$highlight-color;
+            color: const.$highlight-color;
             white-space: nowrap;
         }
     }

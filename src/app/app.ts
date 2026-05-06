@@ -16,7 +16,7 @@ export class App {
 
   private viewportScroller = inject(ViewportScroller);
 
-  constructor(  ){
+  constructor(){
     this.viewportScroller.setOffset([0,110]);
   }
 

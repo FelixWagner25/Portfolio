@@ -1,6 +1,6 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as styles;
+@use "../../styles/constants.scss" as const;
 
 section{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap:40px);
@@ -11,7 +11,7 @@ section{
 
 h2{
     @include mixin.font("Overpass", 800, 24px);
-    color: styles.$highlight-color;
+    color: const.$highlight-color;
 }
 
 @media(max-width: 1440px){

@@ -1,6 +1,6 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as styles;
+@use "../../styles/constants.scss" as const;
 
 
 section{
@@ -25,7 +25,7 @@ h2{
 h3{
     padding-top: 16px;
     @include mixin.font("Overpass", 800, 24px);
-    color: styles.$highlight-color;
+    color: const.$highlight-color;
 }
 
 @media(max-width: 600px){

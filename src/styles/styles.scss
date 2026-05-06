@@ -6,9 +6,8 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @use './mixins.scss' as mixins;
-
-$highlight-color: #00BC8F;
-$background-color: #FFFCF3;
+@use './constants.scss' as const;
+@import 'aos/dist/aos.css';
 
 
 *{
@@ -87,25 +86,25 @@ app-contact {
   @include mat.form-field-overrides((
     outlined-outline-width: 2px,
     outlined-focus-outline-width: 2px,
-    outlined-focus-label-text-color: $highlight-color,
-    outlined-focus-outline-color: $highlight-color,
-    outlined-label-text-color: $highlight-color,
-    outlined-input-text-placeholder-color: $background-color,
-    outlined-input-text-color: $background-color,
-    outlined-hover-outline-color: $background-color,
-    outlined-hover-label-text-color: $highlight-color,
+    outlined-focus-label-text-color: const.$highlight-color,
+    outlined-focus-outline-color: const.$highlight-color,
+    outlined-label-text-color: const.$highlight-color,
+    outlined-input-text-placeholder-color: const.$background-color,
+    outlined-input-text-color: const.$background-color,
+    outlined-hover-outline-color: const.$background-color,
+    outlined-hover-label-text-color: const.$highlight-color,
   ));
 }
 
 app-contact {
   @include mat.checkbox-overrides((
-    selected-checkmark-color: $background-color,
-    selected-focus-icon-color: $highlight-color,
-    selected-focus-state-layer-color: $background-color,
-    selected-icon-color: $highlight-color,
+    selected-checkmark-color: const.$background-color,
+    selected-focus-icon-color: const.$highlight-color,
+    selected-focus-state-layer-color: const.$background-color,
+    selected-icon-color: const.$highlight-color,
     unselected-focus-icon-color: #BA1200,
-    unselected-icon-color: $background-color,
-    unselected-hover-icon-color: $highlight-color,
-    unselected-hover-state-layer-color: $background-color,
+    unselected-icon-color: const.$background-color,
+    unselected-hover-icon-color: const.$highlight-color,
+    unselected-hover-state-layer-color: const.$background-color,
   ));
 }

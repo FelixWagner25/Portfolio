@@ -1,5 +1,5 @@
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as styles;
+@use "../../styles/constants.scss" as const;
 
 
 .h1-main{
@@ -7,7 +7,7 @@
     @include mixin.font("Syne", 800, 78px, $line-height: 100%, $letter-spacing: 1%);
     color: black;
     &:hover{
-        color: styles.$highlight-color;
+        color: const.$highlight-color;
     }
 }
 

@@ -1,6 +1,6 @@
 @use "../main/main.scss" as main;
 @use "../../styles/mixins.scss" as mixin;
-@use "../../styles/styles.scss" as styles;
+@use "../../styles/constants.scss" as const;
 
 $link-width: 640px;
 
@@ -39,7 +39,7 @@ section{
         width: 208px;
         right: 0;
         left: calc($link-width - 208px);
-        border-color: styles.$highlight-color;
+        border-color: const.$highlight-color;
         transition: 0.75s ease;
         transition-delay: 0.3s;;    
     }
