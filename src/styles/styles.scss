@@ -82,6 +82,10 @@ a{
   overflow-x: clip;
 }
 
+.width-100pc{
+  width: 100%;
+}
+
 app-contact {
   @include mat.form-field-overrides((
     outlined-outline-width: 2px,
