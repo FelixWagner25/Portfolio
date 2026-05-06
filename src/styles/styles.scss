@@ -79,6 +79,10 @@ a{
   cursor: pointer;
 }
 
+.aos-clip{
+  overflow-x: clip;
+}
+
 app-contact {
   @include mat.form-field-overrides((
     outlined-outline-width: 2px,

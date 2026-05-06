@@ -8,7 +8,11 @@ section{
     @include mixin.font("Overpass", 400, 22px);
     @include mixin.d-flex($justify-content: space-between, $gap: 48px);
     padding-left: 16px;
-    padding-right: 36px;
+    padding-right: 16px;
+}
+
+.pd-r-32px{
+    padding-right: 32px;
 }
 
 .img-frame-onhover{
