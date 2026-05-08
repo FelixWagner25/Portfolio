@@ -40,18 +40,18 @@ section{
     &:hover::after{
         opacity: 1;
     }
-
 }
 
 p{
     margin-top: 1em;
     margin-bottom: 1em;
+    width: 100%;
 }
 
 .description{
     @include mixin.d-flex($flex-direction: column, $align-items: flex-start, $gap: 48px);
-    width: 50%;
     padding-top: 48px;
+    max-width: 640px;
 }
 
 .icon-wrap{
