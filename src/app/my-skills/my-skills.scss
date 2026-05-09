@@ -40,18 +40,31 @@ h1{
     }
 }
 
-.continue-skills{
+.continue-skills-wrap{
     @include mixin.d-flex($gap: 32px);
+    align-items: center;
     @include mixin.font("Overpass", 400, 22px);
-    > img{
-        width: 75px;
-        height: 75px;
-        transform: rotate(0) scale(1);
-        transition: all 1.25s ease;
-        transition-delay: 100ms;
-        &:hover{
-            transform: rotate(-360deg) scale(1.25);
-        }
+
+    > .continue-skills{
+    width: 75px;
+    height: 75px;
+    transform: rotate(0) scale(1);
+    transition: all 1.25s ease;
+    transition-delay: 100ms;
+    &:hover{
+        transform: rotate(-360deg) scale(1.25);
+    }
+}
+}
+
+.continue-skills{
+    width: 75px;
+    height: 75px;
+    transform: rotate(0) scale(1);
+    transition: all 1.25s ease;
+    transition-delay: 100ms;
+    &:hover{
+        transform: rotate(-360deg) scale(1.25);
     }
 }
 
